@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>个人项目工作室 — 13 个自用桌面工具</title>
+<meta name="description" content="13 个自用桌面工具与作品:桌面工作台、收藏夹遗忘曲线、宿舍超算、几何验证码工具集。数据本地优先,离线可用。">
+<meta property="og:title" content="个人项目工作室 — 13 个自用桌面工具">
+<meta property="og:description" content="从桌面覆盖层到局域网算力网格,13 个自己写给自己用的工具。">
+<meta property="og:image" content="screenshots/projects/05-01-home.png">
+<meta name="theme-color" content="#3d5afe">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+<div id="nav"></div>
+
+<main id="main">
+  <!-- ============ Hero ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="hero-badge">● 13 个项目 · 全部自用 · 数据本地优先</span>
+      <h1>写给自己用的一批小工具</h1>
+      <p class="hero-lede">
+        13 个桌面应用与作品,解决的都是些具体问题:数字验证码每次都要手输、
+        收藏夹攒了几百条从来没复习过、实验室那几台机器闲着就是闲着。
+        全部本地运行,数据不出本机。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="projects/index.html">浏览全部 13 个项目 →</a>
+        <a class="btn btn-ghost btn-lg" href="how-it-works.html">看核心工作流</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">14</div>
+          <div class="hero-stat-label">自用项目</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">6</div>
+          <div class="hero-stat-label">技术栈</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">98.0%</div>
+          <div class="hero-stat-label">验证码识别准确率(留出集)</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">滑块缺口定位通过率</div>
+        </div>
+      </div>
+
+      <div class="hero-shot">
+        <div class="browser-frame">
+          <div class="browser-frame-bar">
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-url">收藏夹遗忘曲线 v0.4.1 —— 真实运行界面,已同步 541 个收藏视频</span>
+          </div>
+          <img src="screenshots/projects/05-01-home.png" alt="收藏夹遗忘曲线应用首页,显示 541 个收藏视频与 539 张待复习卡片" width="1080" height="675">
+        </div>
+        <div class="shot-note real">
+          <strong>实拍截图</strong>
+          <span>上图是 05 收藏夹遗忘曲线的真实运行界面 —— 首页就写着「今天该复习了 539 张」,这正是这个项目存在的理由。</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 精选亮点 ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>四个能一眼看懂的</h2>
+        <p>13 个项目里,这四个的"为什么做"最容易讲清楚,也都留了真实截图。</p>
+      </div>
+      <div class="grid grid-2" id="featured"></div>
+    </div>
+  </section>
+
+  <!-- ============ 工作流 ============ -->
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>一条完整的工作流</h2>
+        <p>以 05 收藏夹遗忘曲线为例 —— 收藏、遗忘、复习、统计,是这批项目里链路最长的一条。</p>
+      </div>
+
+      <div class="steps" id="workflow"></div>
+
+      <div class="mt-4">
+        <a class="btn btn-primary" href="how-it-works.html">看完整工作流与实拍演示 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 全项目一览 ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>全部 13 个项目</h2>
+        <p>涵盖 Electron、Python 桌面端、命令行与网页。多数项目零第三方依赖或明确记录了依赖边界。</p>
+      </div>
+      <div class="grid grid-3" id="all-projects"></div>
+    </div>
+  </section>
+
+  <!-- ============ 素材说明 ============ -->
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>关于这个站点的素材</h2>
+        <p>三类标注,逐张说明,不含糊:实拍、界面示意、可交互源文件。</p>
+      </div>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>实拍截图</h3>
+          <p>来自 4 个项目实际运行的界面,共 14 张:05 收藏夹遗忘曲线(7 张)、06 桌面宠物(2 张 + 1 个动图)、11 宿舍超算(3 张)、15 几何验证码(1 张)。页面上带绿色标记。</p>
+        </div>
+        <div class="card">
+          <h3>界面示意</h3>
+          <p>9 个纯桌面应用无法用 URL 抓图,也没有历史截图留存。页面上带橙色标记的图是按其真实界面结构程序化绘制的示意图,布局与配色依据 README 描述,不代表截图原貌。</p>
+        </div>
+        <div class="card">
+          <h3>可交互源文件</h3>
+          <p>09 军训视频脚本本身就是交互 HTML(拍摄分镜表 + 成片脚本),归为第三类:不是截图也不是示意图,源文件双击即开,详见该项目的详情页。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-banner">
+        <h2>想看哪一个？</h2>
+        <p>每个项目都有独立详情页,写清了它解决什么问题、怎么做的、有哪些坑。</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a class="btn btn-ghost btn-lg" href="projects/index.html">全部项目详情</a>
+          <a class="btn btn-ghost btn-lg" href="about.html">站点与素材说明</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="projects.js"></script>
+<script src="app.js"></script>
+<script>
+/* ---------- 渲染导航与页脚 ---------- */
+document.getElementById("nav").innerHTML = renderNav("index.html");
+document.getElementById("footer").innerHTML = renderFooter(0);
+
+/* ---------- 精选四个 ---------- */
+const FEATURED = ["05", "11", "15", "06"];
+document.getElementById("featured").innerHTML =
+  FEATURED.map((id, i) => projectCard(BY_ID[id], {
+    base: "projects/",
+    imgBase: "../"
+  })).join("");
+
+/* ---------- 全部项目 ---------- */
+document.getElementById("all-projects").innerHTML =
+  PROJECTS.map(p => projectCard(p, { base: "projects/", imgBase: "../" })).join("");
+
+/* ---------- 工作流四步 ---------- */
+const STEPS = [
+  {
+    t: "同步收藏夹",
+    d: "扫码登录后勾选要同步的收藏夹。cookie 只存本机,增量同步按 BV 号去重,不会重复拉取。",
+    shot: "05-03-favlist.png",
+    cap: "收藏夹列表 —— 勾选要同步的收藏夹"
+  },
+  {
+    t: "生成复习卡片",
+    d: "拉取 CC/AI 字幕,交给 LLM 摘要。三档策略:有字幕精摘、无字幕批量轻摘(8 条合并一次调用)、无信息零 AI 兜底 —— 不为没有内容的视频烧 token。",
+    shot: "05-04-library.png",
+    cap: "卡片库 —— 字幕转卡片后的书架"
+  },
+  {
+    t: "按遗忘曲线复习",
+    d: "新卡先自读内容再评估,复习卡先回忆再看答案。按「忘了 / 模糊 / 记得」三档打分,SM-2 算法自动排下次复习时间。",
+    shot: "05-02-review.png",
+    cap: "复习页 —— 先回忆,再看答案"
+  },
+  {
+    t: "看统计与检索",
+    d: "未来 7 天到期分布 + 近 14 天活跃度。全库 FTS5 全文检索,中文子串也能搜到。随时导出 Anki 牌组。",
+    shot: "05-06-stats.png",
+    cap: "学习统计 —— 到期分布与活跃度"
+  }
+];
+document.getElementById("workflow").innerHTML = STEPS.map(s => `
+  <div class="step">
+    <div class="step-num"></div>
+    <div class="step-body">
+      <h3>${s.t}</h3>
+      <p>${s.d}</p>
+      <div class="step-shot">
+        <div class="browser-frame">
+          <div class="browser-frame-bar">
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-url">${s.cap}</span>
+          </div>
+          <img src="screenshots/projects/${s.shot}" alt="${s.cap}" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>`).join("");
+
+/* 卡片错峰入场 */
+document.querySelectorAll("#all-projects .card").forEach((c, i) => {
+  c.classList.add(`reveal-d${Math.min(i % 5, 4)}`);
+});
+</script>
+</body>
+</html>

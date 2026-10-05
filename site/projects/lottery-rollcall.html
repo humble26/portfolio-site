@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03 抽签点名 — 个人项目工作室</title>
+<meta name="description" content="课堂上点一下开始滚名字,再点一下减速,最后停在中奖的人身上。">
+<meta property="og:title" content="03 抽签点名 — 个人项目工作室">
+<meta property="og:description" content="课堂上点一下开始滚名字,再点一下减速,最后停在中奖的人身上。">
+
+<meta name="theme-color" content="#3d5afe">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html"><span class="nav-logo">工</span><span>个人项目工作室</span></a>
+    <button class="nav-burger" aria-label="打开菜单" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="../index.html">首页</a>
+      <a href="index.html" aria-current="page">全部项目</a>
+      <a href="../how-it-works.html">工作流</a>
+      <a href="../about.html">关于</a>
+      <span class="theme-toggle" role="group" aria-label="主题">
+        <button data-mode="light" aria-pressed="false">亮</button>
+        <button data-mode="dark" aria-pressed="false">暗</button>
+        <button data-mode="system" aria-pressed="false">跟随</button>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="project-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="../index.html">首页</a> / <a href="index.html">全部项目</a> / 抽签点名</div>
+      <h1>03 · 抽签点名</h1>
+      <p class="project-lede">课堂上点一下开始滚名字,再点一下减速,最后停在中奖的人身上。</p>
+      <div class="project-meta">
+        <div class="meta-item"><span class="meta-label">版本</span><span class="meta-value">双平台</span></div>
+        <div class="meta-item"><span class="meta-label">状态</span><span class="meta-value">Windows + 麒麟</span></div>
+        <div class="meta-item"><span class="meta-label">源码目录</span><span class="meta-value mono">03-抽签点名</span></div>
+        <div class="meta-item"><span class="meta-label">技术栈</span><span class="meta-value"><span class="tag">Python 3</span> <span class="tag">tkinter</span> <span class="tag">零第三方依赖</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="mock">
+    <div class="mock-bar"><span class="browser-frame-dot"></span><span class="browser-frame-dot"></span><span class="browser-frame-dot"></span><span class="t">抽签点名</span></div>
+    <div class="mock-body">
+      <div class="mock-main" style="display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px">
+        <div style="width:100%;max-width:340px;background:var(--bg-subtle);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center">
+          <div class="mock-line" style="height:20px;background:var(--border)"></div>
+          <div style="background:var(--accent-light);border-radius:6px;padding:7px;margin:5px 0"><b>◀ 王小明 ▶</b></div>
+          <div class="mock-line" style="height:20px;background:var(--border)"></div>
+          <div class="mock-line" style="height:20px;background:var(--border)"></div>
+        </div>
+        <span class="mock-btn">开始 / 停止（空格）</span>
+      </div>
+    </div></div><div class="shot-note mock">
+           <strong>界面示意</strong>
+           <span>本项目为桌面应用,尚未留存实拍截图。此处按其真实界面结构与配色程序化绘制,布局与文案以 README 描述为准。</span>
+         </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <h2>它解决什么</h2>
+        <p>随机点名用现成软件有两个常见问题:名字长短不一时字号忽大忽小,窗口一缩放就排版错乱;换个名单要重新配置半天。</p>
+        <h2>怎么做的</h2>
+        <p>纯 Python 重写,零第三方依赖,只要有 Python 3 + tkinter 就能跑。字号恒定不随名字长短缩放,窗口缩放时滚轮行数自动增减但字号始终不变。改名单只需编辑 num.txt,或把任意 txt 拖到程序上。</p>
+        
+        
+        <h2 class="anchor-target">关键数字</h2>
+        <div class="metrics">
+          
+            <div class="metric">
+              <div class="metric-num">0</div>
+              <div class="metric-label">第三方依赖</div>
+              <div class="metric-note">Python 3 + tkinter 即可</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">969</div>
+              <div class="metric-label">行(增强版)</div>
+              <div class="metric-note">award_app.py</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">500</div>
+              <div class="metric-label">行(滚轮版)</div>
+              <div class="metric-note">Windows / 麒麟同一份</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">108</div>
+              <div class="metric-label">行缩放回归测试</div>
+              <div class="metric-note">真实 App 实例跑平台分支</div>
+            </div>
+        </div>
+        <h2 class="anchor-target">功能</h2>
+        <ul>
+          <li><strong>字号恒定</strong> —— 所有名字同一字号,不会因为名字长短而忽大忽小。</li><li><strong>窗口随意缩放</strong> —— 滚轮行数随窗口高度自动增减,缩小时自动减少行数。</li><li><strong>中奖高亮</strong> —— 抽中的人行有金色高亮带与两侧三角指示。</li><li><strong>双平台</strong> —— 银河麒麟 / 中标麒麟与 Windows 同一份源码,跨平台适配。</li><li><strong>防重复(增强版)</strong> —— 读 num.txt + award.ini,支持防重复、速度调节、背景更换。</li><li><strong>键盘操作</strong> —— 空格/回车开始与停止,双击或 F11 最大化,Esc 退出。</li>
+        </ul>
+        
+        
+        
+        <h2>工程细节</h2>
+        <div class="callout">本仓库是纯 Python 重写版,代码、界面、打包脚本均为本人所写,与上游 VB6 程序无代码继承关系。</div><div class="callout">抽签记录每抽中一人追加写入 result_linux.txt,不改动历史记录文件。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="pager">
+        <a href="desktop-workbench.html"><span class="dir">← 上一个</span><span class="name">01 桌面工作台</span></a>
+        <a class="next" href="jaccount-captcha.html"><span class="dir">下一个 →</span><span class="name">04 jAccount 验证码识别</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <strong>个人项目工作室</strong><br>
+          13 个自用桌面工具与作品 · 内容为个人项目记录,非商业用途
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">首页</a>
+          <a href="../projects/index.html">全部项目</a>
+          <a href="../how-it-works.html">工作流</a>
+          <a href="../about.html">关于</a>
+        </div>
+      </div>
+    </footer>
+<script src="../projects.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>

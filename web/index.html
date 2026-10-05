@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>个人项目工作室 · 工具、报告与归档</title>
+<meta name="description" content="十个自用的桌面与校园工具，一批审查与评估报告，以及一套把每次改动都留下出处的归档习惯：依赖单向、纯函数可测、数据本地优先、变更必留档。">
+<meta name="theme-color" content="#fafaf8">
+<meta property="og:title" content="个人项目工作室 · 工具、报告与归档">
+<meta property="og:description" content="把反复遇到的麻烦做成能装在自己电脑上的工具，并把过程完整留档。">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232B4EE6'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.className += " js";</script>
+</head>
+<body>
+<a class="skip-link" href="#works">跳到作品</a>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top">
+      <span class="brand-dot" aria-hidden="true"></span>
+      个人项目工作室
+    </a>
+    <nav class="nav" aria-label="页面导航">
+      <a href="#works">作品</a>
+      <a href="#practice">做法</a>
+      <a href="#archive">归档</a>
+      <a href="#outputs">产出</a>
+      <a href="#about">关于</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>桌面工具 · 校园场景 · 报告与归档</p>
+      <h1>把反复遇到的麻烦<br>做成能装在自己电脑上的工具</h1>
+      <p class="lede">
+        十个自用项目：把待办到 OCR 收进同一扇窗口的 Electron 工作台、用一条命令把宿舍的电脑拼成「临时超算」的计算网格、
+        本地跑 Whisper 的音频转写、课堂上一按就滚的抽签小工具，还有一套把收藏夹变成复习计划的复习器。
+        另有一批审查、整改与立项评估报告，和一套把每次改动都留下出处的归档习惯 —— 数据留在本机，过程写在纸上。
+      </p>
+
+      <dl class="stats">
+        <div class="stat">
+          <dt>收录项目</dt>
+          <dd><span class="num">10</span><span class="sub">9 个自建 · 1 个继承维护</span></dd>
+        </div>
+        <div class="stat">
+          <dt>手写源码</dt>
+          <dd><span class="num">4.4<span class="unit">万行</span></span><span class="sub">不含依赖、构建产物与测试</span></dd>
+        </div>
+        <div class="stat">
+          <dt>自动化测试</dt>
+          <dd><span class="num">511</span><span class="sub">项通过：492 项基线 + 新增 19 项实测</span></dd>
+        </div>
+        <div class="stat">
+          <dt>一次归档</dt>
+          <dd><span class="num">15111</span><span class="sub">个文件，零字节丢失</span></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="works">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="label">01 — 作品</p>
+        <h2>十个项目，六套技术栈</h2>
+        <p class="section-lede">从 Electron 到 Node.js 到 pywebview 到 tkinter，共同点是都在解决自己真实遇到的问题。点「工程细节」可以展开每个项目的做法与取舍。</p>
+      </header>
+
+      <div class="filters reveal" role="group" aria-label="按用途筛选项目">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">全部 <span class="chip-n">10</span></button>
+        <button class="chip" type="button" data-filter="eff" aria-pressed="false">效率与创作 <span class="chip-n">5</span></button>
+        <button class="chip" type="button" data-filter="campus" aria-pressed="false">校园场景 <span class="chip-n">3</span></button>
+        <button class="chip" type="button" data-filter="sys" aria-pressed="false">系统与算法 <span class="chip-n">2</span></button>
+      </div>
+
+      <div class="grid" id="project-grid">
+
+        <article class="card reveal" data-cat="eff">
+          <div class="card-top">
+            <span class="card-no">01</span>
+            <span class="tag tag-live">活跃 v1.9.1</span>
+          </div>
+          <h3>桌面工作台</h3>
+          <p class="card-tag">待办、便签、打卡、番茄钟、剪贴板历史、截图取字、时间统计与 AI 余额监测，收进同一个本地优先的 Electron 应用。</p>
+          <ul class="chips">
+            <li>Electron 31</li><li>原生 JS</li><li>Node.js</li><li>离线 OCR</li>
+          </ul>
+          <dl class="specs">
+            <div><dt>手写源码</dt><dd>≈1.1 万行</dd></div>
+            <div><dt>自动化测试</dt><dd>244 + 33</dd></div>
+            <div><dt>运行依赖</dt><dd>1 个</dd></div>
+          </dl>
+          <div class="card-foot">
+            <button class="more" type="button" aria-expanded="false" aria-controls="d-workbench">工程细节</button>
+            <a class="repo" href="https://github.com/humble26/desktop-workbench" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+          </div>
+          <div class="detail" id="d-workbench">
+            <div class="detail-inner">
+              <ul class="hl">
+                <li><strong>依赖单向向下</strong>：入口（main.js）→ 桥接（preload.js）→ 域逻辑（lib/）→ 视图（renderer/）。域逻辑不依赖 electron，可以在没有图形环境的地方直接跑单测。</li>
+                <li><strong>把渲染层当用户输入</strong>：它提交的每个补丁都要先过形状、体积与白名单校验，IPC 调用校验来源；AI 平台的 baseUrl 写死不接受设置覆盖，免得密钥被转发到任意域名。</li>
+                <li><strong>只有一个落盘者</strong>：内存缓存 + 修订号 + 原子写入 + 150ms 写合并；数据损坏时从 backups/ 回溯自愈，schema 迁移前先做一次性备份。</li>
+                <li><strong>离线优先</strong>：唯一运行依赖是离线 OCR，除主动开启的余额监测与更新检查外不产生联网请求。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-cat="eff">
+          <div class="card-top">
+            <span class="card-no">02</span>
+            <span class="tag tag-live">活跃 v0.4.1</span>
+          </div>
+          <h3>收藏夹遗忘曲线 · B站版</h3>
+          <p class="card-tag">把 B 站收藏夹变成会主动找你复习的知识库：同步收藏夹 → 拉字幕 → LLM 生成卡片 → 按遗忘曲线排期 → 主动回忆评分。界面已从 tkinter 重写为本地 webui。</p>
+          <ul class="chips">
+            <li>Python 3.11+</li><li>本地 webui</li><li>SQLite FTS5</li><li>SM-2</li>
+          </ul>
+          <dl class="specs">
+            <div><dt>手写源码</dt><dd>≈6400 行</dd></div>
+            <div><dt>界面</dt><dd>webui + CLI</dd></div>
+            <div><dt>导出</dt><dd>Anki .apkg</dd></div>
+          </dl>
+          <div class="card-foot">
+            <button class="more" type="button" aria-expanded="false" aria-controls="d-bili">工程细节</button>
+            <a class="repo" href="https://github.com/humble26/bili-fav-review" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+          </div>
+          <div class="detail" id="d-bili">
+            <div class="detail-inner">
+              <ul class="hl">
+                <li><strong>界面重写，业务层一行不动</strong>：界面从 tkinter 换成「本地 HTTP 服务 + pywebview 原生窗口 + 零构建 HTML/CSS/JS」，收藏夹、卡片库、搜索、统计四个页面全部接完；GUI 与 CLI 复用同一套 commands/ 与 store/，两个入口行为完全一致。</li>
+                <li><strong>重构顺手修了三个真 bug</strong>：畸形摘要会让 Anki 导出与卡片详情直接崩、还会让 FTS 写入失败 —— 这三个都是业务层的老问题，在换界面过程中被抓出来修掉。</li>
+                <li><strong>排期用 SM-2 简化版</strong>：记得 → 间隔 ×ease 且 ease +0.05；模糊 → 间隔 ×0.6；忘了 → 重置为 1 天。数值整体偏向「多见面」，适合碎片时间。</li>
+                <li><strong>摘要三档全覆盖</strong>：有字幕精摘 → 无字幕批量轻摘（8 条合并成一次请求，省额度）→ 零 AI 兜底。无字幕时明确要求只依据标题与简介归纳，不许编造视频细节。</li>
+                <li><strong>检索与导出</strong>：FTS5 trigram 支持中文子串搜索，标题、简介、字幕全文、摘要一起搜；导出按 BV 号稳定去重，反复导入不会产生重复卡片。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal card-new" data-cat="sys">
+          <div class="card-top">
+            <span class="card-no">03</span>
+            <span class="tag tag-new">新增 · v0.2.0</span>
+          </div>
+          <h3>宿舍超算 · DormGrid</h3>
+          <p class="card-tag">局域网志愿计算网格：把宿舍或实验室里闲着的电脑用一条命令组成一台「临时超算」，协调器切任务、节点自动领活、结果自动拼回整图。</p>
+          <ul class="chips">
+            <li>Node.js ≥18</li><li>Electron 桌面端</li><li>UDP 自动发现</li><li>Blender 帧农场</li>
+          </ul>
+          <dl class="specs">
+            <div><dt>核心依赖</dt><dd>0 个</dd></div>
+            <div><dt>双节点实测</dt><dd>3.5 秒出全图</dd></div>
+            <div><dt>功能测试</dt><dd>19 项</dd></div>
+          </dl>
+          <div class="card-foot">
+            <button class="more" type="button" aria-expanded="false" aria-controls="d-dormgrid">工程细节</button>
+            <a class="repo" href="https://github.com/humble26/dormgrid" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+          </div>
+          <div class="detail" id="d-dormgrid">
+            <div class="detail-inner">
+              <ul class="hl">
+                <li><strong>切成瓦片就没有调度难题</strong>：默认把 2560×1440 切成 8×4 共 32 块，谁空闲谁领，天然负载均衡；节点随时加入退出，超过 15 分钟没交卷的任务自动重新排队，全部瓦片到齐后自动拼图并生成预览。</li>
+                <li><strong>两台机器就能开跑</strong>：协调器启动时打印所有局域网地址，工作节点用 UDP 广播自动发现（端口 47823）也可以直连；协调器自带 Web 仪表盘，浏览器里直接看进度与成图。</li>
+                <li><strong>桌面端一个窗口管两种角色</strong>：选任务类型一键启动、内嵌仪表盘打开成窗口、实时看自己的领活与交卷日志；日志按里程碑高亮、错误红显，还能一键切「只看重要」。</li>
+                <li><strong>没装 Node 的机器也能入网</strong>：工作节点可打包成单文件 exe（Node SEA），拷过去双击即用；打包产物自带 <code>--e2e</code> 无人值守验证，跑完真实渲染、写出结果 JSON 再退出。</li>
+                <li><strong>细节都测过</strong>：PNG 编码器是手写的，渲染确定性由测试保证「线程数不影响输出、逐字节一致」；让路策略会在有人用电脑或电池供电时自动减速；除演示负载外还有 Blender 帧农场（选 .blend 加帧范围即可提交）。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-cat="sys">
+          <div class="card-top">
+            <span class="card-no">04</span>
+            <span class="tag tag-study">仅技术记录</span>
+          </div>
+          <h3>jAccount 验证码识别</h3>
+          <p class="card-tag">ResNet-20 + ONNX Runtime Web 的登录验证码识别，在线准确率 98.0%，最后 2% 被追成了一篇可复现的负结果。</p>
+          <ul class="chips">
+            <li>ResNet-20</li><li>ONNX Runtime Web</li><li>MV3 扩展</li><li>油猴脚本</li>
+          </ul>
+          <dl class="specs">
+            <div><dt>留出集准确率</dt><dd>98.0%</dd></div>
+            <div><dt>扩展版</dt><dd>v1.0.8</dd></div>
+            <div><dt>脚本版</dt><dd>v4.5.2</dd></div>
+          </dl>
+          <div class="card-foot">
+            <button class="more" type="button" aria-expanded="false" aria-controls="d-captcha">工程细节</button>
+          </div>
+          <div class="detail" id="d-captcha">
+            <div class="detail-inner">
+              <ul class="hl">
+                <li><strong>模型与推理都留在本地</strong>：浏览器扩展版（MV3）把 onnx 与 ort-wasm 全打进包内，全程零网络上报，不需要脚本管理器。</li>
+                <li><strong>把瓶颈追到底</strong>：为第 4 位字符做了两轮端到端重训、扩充 420 张样本、75 个定向增广变体与真值核对，确认这两个错误样本是该字体边缘字形，属于数据密度边界。</li>
+                <li><strong>负结果也留了证据</strong>：回写实验 ONNX 独立复验，微调权重与原生差 1.8e-4、预测 100% 一致 —— 判定无交付价值，生产模型保持不升级。</li>
+                <li><strong>为未来留资产</strong>：300 张已核对标注样本加上全套训练、回写、校验脚本都归档保留，等拿到同类真实数据可以直接复用。</li>
+              </ul>
+              <p class="note">页面只陈述技术过程，不提供安装包与下载。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-cat="campus">
+          <div class="card-top">
+            <span class="card-no">05</span>
+            <span class="tag tag-live">活跃 v2.6.0</span>
+          </div>
+          <h3>交我导 · 校园导航</h3>
+          <p class="card-tag">交大常用网站与社团的桌面导航：搜索增强、拼音命中、二维码分享、收藏侧栏与假期倒计时。</p>
+          <ul class="chips">
+            <li>pywebview</li><li>WebView2</li><li>原生 HTML/CSS/JS</li>
+          </ul>
+          <dl class="specs">
+            <div><dt>前端源码</dt><dd>≈5800 行</dd></div>
+            <div><dt>拼音映射</dt><dd>580 字</dd></div>
+            <div><dt>前端单测</dt><dd>8 个 + e2e</dd></div>
+          </dl>
+          <div class="card-foot">
+            <button class="more" type="button" aria-expanded="false" aria-controls="d-nav">工程细节</button>
+            <a class="repo" href="https://github.com/humble26/jiaowodao-desktop" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+          </div>
+          <div class="detail" id="d-nav">
+            <div class="detail-inner">
+              <ul class="hl">
+                <li><strong>搜索是重点</strong>：10 个热门直达预选、输入联想下拉（↑↓ / Enter / Esc）、拼音与首字母命中（tushuguan、tsg 都能搜到图书馆）、最近 10 条历史、域名直达、Ctrl+K 一键聚焦。</li>
+                <li><strong>数据能自己更新</strong>：内置两份数据文件，启动时静默比对 updatedAt 版本号按需更新；网页视图写不了磁盘，就把更新结果落到 localStorage 并本地补齐拼音。</li>
+                <li><strong>启动有回退</strong>：优先 pywebview（WebView2 内核），依赖缺失或启动失败则自动回退到 Edge 应用模式，含缓存目录清理。</li>
+                <li><strong>顺手的小功能</strong>：卡片右键可复制标题 / 链接 / 名称，或生成二维码供手机扫码直达，二维码可下载成 PNG。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-cat="eff">
+          <div class="card-top">
+            <span class="card-no">06</span>
+            <span class="tag tag-live">活跃 v0.3</span>
+          </div>
+          <h3>Habit Pet · 桌面橘猫</h3>
+          <p class="card-tag">用真实数据喂养的桌面宠物：饱食度靠 git commit、久坐掉血、熬夜掉寿命上限，LLM 负责针对你的行为说风凉话。</p>
+          <ul class="chips">
+            <li>Python</li><li>tkinter</li><li>git CLI</li><li>LLM（可选）</li>
+          </ul>
+          <dl class="specs">
+            <div><dt>手写源码</dt><dd>2150 行</dd></div>
+            <div><dt>运行依赖</dt><dd>仅 requests</dd></div>
+            <div><dt>成就</dt><dd>17 枚</dd></div>
+          </dl>
+          <div class="card-foot">
+            <button class="more" type="button" aria-expanded="false" aria-controls="d-pet">工程细节</button>
+            <a class="repo" href="https://github.com/humble26/habit-pet" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+          </div>
+          <div class="detail" id="d-pet">
+            <div class="detail-inner">
+              <ul class="hl">
+                <li><strong>只用两个数据源，都在本地</strong>：git 只跑 rev-list 读提交哈希，不看任何文件内容；空闲检测只回答「最近 60 秒有没有动过键鼠」。</li>
+                <li><strong>养成只升不降</strong>：成长值是 commit 数加活跃天数，幼猫 → 成猫 → 大猫，体型随阶段变大；连续活跃 streak 跨天结算，最高纪录永久保留；弃养会清空养成记录 —— 这是留存机制的核心。</li>
+                <li><strong>专注模式不是摆设</strong>：专注期间连续伏案不算久坐，健康不掉血；计时只累计「在座」时间，离开键盘超过 10 分钟自动暂停。</li>
+                <li><strong>没有 API Key 也能玩</strong>：全部台词都有离线模板兜底，另可把周报渲染成分享卡 PNG。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal card-new" data-cat="eff">
+          <div class="card-top">
+            <span class="card-no">07</span>
+            <span class="tag tag-new">新增</span>
+          </div>
+          <h3>音频转写工具</h3>
+          <p class="card-tag">把音频丢进去、拿回文字：本地 Whisper 推理，音频不出本机；输出带时间戳文本、纯文本、SRT 字幕与 Word 文档。</p>
+          <ul class="chips">
+            <li>faster-whisper</li><li>PySide6</li><li>CPU int8</li><li>全本地推理</li>
+          </ul>
+          <dl class="specs">
+            <div><dt>手写源码</dt><dd>2489 行</dd></div>
+            <div><dt>桌面端</dt><dd>拖入即转</dd></div>
+            <div><dt>输出格式</dt><dd>4 种</dd></div>
+          </dl>
+          <div class="card-foot">
+            <button class="more" type="button" aria-expanded="false" aria-controls="d-audio">工程细节</button>
+            <a class="repo" href="https://github.com/humble26/audio-transcriber" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+          </div>
+          <div class="detail" id="d-audio">
+            <div class="detail-inner">
+              <ul class="hl">
+                <li><strong>三种用法按场景挑</strong>：PySide6 桌面端把文件或整个文件夹拖进窗口就自动开跑、逐个显示进度与状态；批量 CLI 支持递归目录、指定语言与领域提示词、统一输出目录、断点续跑和「只列清单」的试跑；另有一个单文件最小示例。</li>
+                <li><strong>全程本地推理</strong>：faster-whisper 在 CPU 上以 int8 跑，VAD 过滤静音段提速；模型不入库，用脚本从镜像下载 —— small 用来快速过一遍，large-v3 用来出正式文字稿。</li>
+                <li><strong>稳定性是有意写出来的</strong>：temperature 从 0 逐级升到 1 并关掉「依赖上文」以抑制重复循环；单个文件失败不中断整批，最后给成功 / 跳过 / 失败清单；多种输出格式逐个写出，一种失败不影响其余。</li>
+                <li><strong>还有一层自用场景</strong>：转写稿可以再生成「逐句翻译」的 Word 文档，直接当教学材料用。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-cat="eff">
+          <div class="card-top">
+            <span class="card-no">08</span>
+            <span class="tag tag-live">已发布 v1.1.0</span>
+          </div>
+          <h3>Markdown 转 Word</h3>
+          <p class="card-tag">把 AI 回复里的 Markdown 一键变成能粘进 Word 的富文本，或直接导出 .doc 文件。桌面版与网页版双形态，全程离线。</p>
+          <ul class="chips">
+            <li>Electron</li><li>单文件网页版</li><li>内置解析器</li><li>离线</li>
+          </ul>
+          <dl class="specs">
+            <div><dt>交付形态</dt><dd>桌面 + 网页</dd></div>
+            <div><dt>网页版体积</dt><dd>18 KB</dd></div>
+            <div><dt>外部依赖</dt><dd>0 个</dd></div>
+          </dl>
+          <div class="card-foot">
+            <button class="more" type="button" aria-expanded="false" aria-controls="d-md2word">工程细节</button>
+            <a class="repo" href="https://github.com/humble26/markdown-word-converter" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+          </div>
+          <div class="detail" id="d-md2word">
+            <div class="detail-inner">
+              <ul class="hl">
+                <li><strong>解决的是一段很具体的来回</strong>：从对话窗口复制 Markdown 粘进 Word，格式总是散的。这个工具在中间做一次转换，标题、加粗、列表、表格、代码块与引用都能保留。</li>
+                <li><strong>两种交付形态按场景选</strong>：桌面版是 Electron，用原生剪贴板 API 写入富文本，导出时弹系统保存对话框；网页版是单个 18 KB 的 HTML，双击即用，不装任何东西，导出走浏览器下载。</li>
+                <li><strong>解析与导出都不出本机</strong>：内置轻量 Markdown 解析器，不联网；.doc 在前端直接生成，不上传文本。</li>
+                <li><strong>怎么发的就怎么归档</strong>：交付包按用途分成 01 绿色版 / 02 网页版 / 03 桌面源码 / 04 网页源码 / 05 图标 / 06 文档 六个目录，另有 TXT 与 HTML 两版安装说明 —— 收件人不用猜哪个文件该点。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-cat="campus">
+          <div class="card-top">
+            <span class="card-no">09</span>
+            <span class="tag tag-live">已交付双平台</span>
+          </div>
+          <h3>抽签点名</h3>
+          <p class="card-tag">课堂抽签小工具：老虎机式滚轮，点一下开始滚动，再点一下减速停在中奖者身上；Windows 与银河麒麟双平台可用。</p>
+          <ul class="chips">
+            <li>Python</li><li>tkinter</li><li>银河麒麟 / Linux</li>
+          </ul>
+          <dl class="specs">
+            <div><dt>手写源码</dt><dd>500 + 969 行</dd></div>
+            <div><dt>第三方依赖</dt><dd>0 个</dd></div>
+            <div><dt>平台</dt><dd>Windows + 麒麟</dd></div>
+          </dl>
+          <div class="card-foot">
+            <button class="more" type="button" aria-expanded="false" aria-controls="d-lottery">工程细节</button>
+            <a class="repo" href="https://github.com/humble26/lottery-name-picker" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+          </div>
+          <div class="detail" id="d-lottery">
+            <div class="detail-inner">
+              <ul class="hl">
+                <li><strong>字号固定不变</strong>：所有名字同一字号，不因名字长短缩放；窗口缩小时减少滚轮行数，而不是把字压小。中奖行有金色高亮带与两侧三角指示。</li>
+                <li><strong>两个版本，一条主线</strong>：500 行的滚轮窗口版是主力；另有 969 行的增强版，读名单与 ini 配置，支持防重复、速度调节、背景自由更换、结果自动保存，并兼容原版 result.txt 格式。</li>
+                <li><strong>零第三方依赖</strong>：只用 tkinter / math / os / random / sys / time 标准库，靠 canvas 手绘圆角面板、渐变背景与高亮带。</li>
+                <li><strong>部署陷阱写进文档</strong>：PyInstaller 打包后 exe 与 _internal 必须同目录，使用说明里把这条单独提出来讲清楚，避免「拷走一个文件打不开」。</li>
+                <li><strong>麒麟移植先探环境</strong>：目标机器没有 root 权限、不允许装系统包，所以先跑只读的环境探测脚本判断图形能力，再决定方案；移植版与 Windows 版源码 diff 无差异。与 2006 年的 VB6 上游程序无代码继承关系，是纯 Python 重写。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="practice">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="label">02 — 做法</p>
+        <h2>七条能对账的工程约定</h2>
+        <p class="section-lede">这些不是写在白板上的口号，而是能被验证的东西。每条都标了它在本工作区里的出处 —— 改了哪一处、测了哪一项，都能追回去。</p>
+      </header>
+
+      <ol class="practices reveal">
+        <li>
+          <span class="practice-no">01</span>
+          <h3>依赖单向向下</h3>
+          <p>入口 → 桥接 → 域逻辑 → 视图，一条线往下，不回头。域逻辑刻意不依赖 UI 框架，于是能在一个没有图形环境的地方直接跑单测。</p>
+          <p class="practice-src">出处：桌面工作台的四层结构（models 层不 import 任何 UI / 框架模块）</p>
+        </li>
+        <li>
+          <span class="practice-no">02</span>
+          <h3>易变的外部契约收拢到一处</h3>
+          <p>易变的外部契约集中收拢到一处常量模块，每条都是「最精确 → 最宽松」的候选列表；主进程与渲染层共用的数据协议也只有一个模块。页面改版时只需要改一处。</p>
+          <p class="practice-src">出处：桌面工作台的 storeproto.js（主进程与渲染层共用，被契约测试约束）</p>
+        </li>
+        <li>
+          <span class="practice-no">03</span>
+          <h3>把渲染层当成不可信输入</h3>
+          <p>界面提交的每个数据补丁都要先过形状、体积与白名单校验，进程间调用校验来源；AI 平台的接口地址写死在代码里，不接受设置覆盖 —— 免得密钥被转发到任意域名。</p>
+          <p class="practice-src">出处：桌面工作台的 patchguard.js / security.js / ai/providers.js</p>
+        </li>
+        <li>
+          <span class="practice-no">04</span>
+          <h3>数据默认留在本机</h3>
+          <p>工作台、桌面宠物、抽签点名都声明不联网；截图取字走离线 OCR；转写与验证码识别都在本地推理；收藏夹工具只在你主动同步时联网。用不到联网的功能就不该有联网的权限。</p>
+          <p class="practice-src">出处：桌面工作台的唯一运行依赖是离线 OCR · 桌面宠物的数据源只有本地 git 与键鼠空闲 · 音频转写的音频不出本机</p>
+        </li>
+        <li>
+          <span class="practice-no">05</span>
+          <h3>部署陷阱写进文档，而不是留在脑子里</h3>
+          <p>打包后可执行文件与资源目录必须同目录、单文件打包会派生子进程、未签名程序会被系统安全提示拦住 —— 这三类坑都写进了使用说明，因为「拷走一个文件打不开」这种事，用户第一次遇到时你不会在场。</p>
+          <p class="practice-src">出处：抽签点名的使用说明单列一条「exe 与 _internal 必须同目录」 · Markdown 转 Word 的安装说明写了未签名提示与符号链接权限</p>
+        </li>
+        <li>
+          <span class="practice-no">06</span>
+          <h3>复核要能推翻自己</h3>
+          <p>全工作区检查先只读跑一遍出报告，再用独立核查逐条复算、连自己的统计错误一起公开修订；修复前先给 15 个仓库打基线标签以便回滚，修完用隔离双版本对照实测行为差异 —— 这轮自审又发现并修掉自己引入的 3 处问题。</p>
+          <p class="practice-src">出处：全量代码检查报告-20260928 的修订记录 · P0 修复记录 · 修复自审与验证报告</p>
+        </li>
+        <li>
+          <span class="practice-no">07</span>
+          <h3>改完必须留档</h3>
+          <p>每次审查、整改、复核都留一份可对照的报告；每次归档都留说明、清单快照与来源去向映射表。下一个接手的人（很可能就是半年后的自己）应该能顺着文档把整条路走回来。</p>
+          <p class="practice-src">出处：见下一节「归档与可追溯」</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="archive">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="label">03 — 归档</p>
+        <h2>归档与可追溯</h2>
+        <p class="section-lede">
+          代码会改，结论会过时，但「当时为什么这么决定」一旦丢掉就再也找不回来。
+          所以在这些项目之外，还有一件长期在做的事：把每一次移动、改写和结论都留成可以核对的形式。
+        </p>
+      </header>
+
+      <div class="conv reveal">
+        <h3>归档约定：四件套</h3>
+        <ol class="flow">
+          <li>
+            <span class="flow-no">1</span>
+            <strong>剪切移动</strong>
+            <small>不是复制</small>
+          </li>
+          <li>
+            <span class="flow-no">2</span>
+            <strong>归档说明</strong>
+            <small>为什么这样归</small>
+          </li>
+          <li>
+            <span class="flow-no">3</span>
+            <strong>清单快照</strong>
+            <small>归档前的文件全貌</small>
+          </li>
+          <li>
+            <span class="flow-no">4</span>
+            <strong>来源去向映射表</strong>
+            <small>每个文件原来在哪</small>
+          </li>
+        </ol>
+        <p class="conv-why">为什么一定要剪切而不是复制：复制会留下双份，然后两边各自修改、各自漂移，过一阵就没人说得清哪一份是准的。</p>
+      </div>
+
+      <div class="ledger reveal">
+        <div class="ledger-head">
+          <h3>一次真实的归档</h3>
+          <span class="ledger-date">2026-09-24</span>
+        </div>
+        <p class="ledger-lede">
+          把一处独立工作目录的 15111 个文件并入主工作区，再按项目把原来平铺的 12 个目录重整成 16 个分区。
+          归档本身只用同一磁盘内的重命名 —— 不复制数据，也不删除任何文件。
+        </p>
+
+        <dl class="ledger-grid">
+          <div><dt>并入文件</dt><dd>15,111</dd></div>
+          <div><dt>数据量</dt><dd>3.49 GB</dd></div>
+          <div><dt>目录重整</dt><dd>12 → 16</dd></div>
+          <div><dt>对账差值</dt><dd>0 字节</dd></div>
+          <div><dt>引用改写</dt><dd>30 文件 / 38 处</dd></div>
+          <div><dt>回归验证</dt><dd>8 个项目</dd></div>
+        </dl>
+
+        <ul class="ledger-notes">
+          <li><strong>精确对账</strong>：迁移前两处合计 27998 个文件，迁移后基数一致。中途一度差 54 字节，追下去发现是一份诊断输出因终端编码问题把文件名写错了 —— 找到它，数字就一分不差地对上了。</li>
+          <li><strong>先定位再动手</strong>：有几项因为可执行文件被进程占用而搬不动。没有反复重试，而是逐层下钻把被占用的对象缩到四个具体文件，确认是临时占用后一次搬完。</li>
+          <li><strong>引用要跟着走</strong>：带绝对路径的脚本全部改到新位置，其中两处是本来就指错的旧缺陷，顺手修好。改完 119 个 Python 文件重新解析，0 语法错误。</li>
+          <li><strong>改完就回归</strong>：八个项目的测试套件与平台分支测试全部重跑，而不是假设「只是挪了文件不会坏」。</li>
+        </ul>
+      </div>
+
+      <div class="freeze reveal">
+        <h3>归档冻结</h3>
+        <p>
+          归档区里的历史报告与运行日志，里面的路径保持着当时的写法 —— 即使那些路径早已不存在。
+          整理时只更新可执行代码里的路径，文档与日志一个字不改：它们是当时状态的原始记录，改了就失真了。
+          需要复跑时，用工作集里已经同步过的现行版本。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="outputs">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="label">04 — 产出</p>
+        <h2>作品之外</h2>
+        <p class="section-lede">除了能点开的程序，还留下了一批报告、评估、文档与内容作品。</p>
+      </header>
+
+      <ul class="outputs reveal">
+        <li>
+          <h3>代码审查与整改报告<span class="out-n">11 份</span></h3>
+          <p>深度分析做过三代迭代，原始存档与核查结论一起保留；另有全量代码审查、整改实施记录、以第三方视角做的全项目复核，以及后续修改方案与未来方向评估。</p>
+        </li>
+        <li>
+          <h3>全工作区检查与 P0 修复<span class="out-n">4 份</span></h3>
+          <p>一轮覆盖 14 个项目、约 8.5 万行的全量检查：查出 7 项高危、约 60 项中危，凭据零泄露；独立核查逐条复算，7 项高危 7/7 成立。随后修复 5 项并补 45 项回归测试，修完再做一轮隔离双版本对照自审。</p>
+        </li>
+        <li>
+          <h3>立项评估<span class="out-n">4 份</span></h3>
+          <p>维多利亚 3 自动日报、Windows 桌面弹幕引擎、论文引用哨兵、现实数据桌面宠物。后两项后来分别落地成了收藏夹复习工具与桌面宠物。</p>
+        </li>
+        <li>
+          <h3>内容产出<span class="out-n">5 份</span></h3>
+          <p>单文件 HTML 的 AI 行业周报与日报；一套军训视频的拍摄分镜表「淬火青春（两幕版）」与封面题字素材；以及一份 32 页的《如何看懂体检单》科普演示 —— 面向社区中老年听众，先写受众对齐与内容边界，再做版式与配图。</p>
+        </li>
+        <li>
+          <h3>文档、工具与经验</h3>
+          <p>34 KB 的 Ubuntu 虚拟机安装指南与一个虚拟化环境检测脚本；只下载免费或已购内容、绝不自动消耗积分的交大资料下载器；用本人账号只读抓取的课程作业导出（公式为矢量渲染，可直接打印）；以及 GitHub 仓库对账发布报告与课程平台抓取经验报告。</p>
+        </li>
+        <li>
+          <h3>工作区整理</h3>
+          <p>归档产出的索引、路径映射表、逐项目验证报告与操作日志，跟项目代码放在同一个工作区里 —— 归档这件事本身也要留档。</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap about">
+      <header class="section-head reveal">
+        <p class="label">05 — 关于</p>
+        <h2>关于这些项目</h2>
+      </header>
+      <div class="about-body reveal">
+        <p>
+          这里的项目都来自我自己遇到的具体麻烦：抢不到的课、收藏了却再没打开过的视频、端到端点一遍太慢的手工流程、
+          宿舍里几台闲着的电脑、以及一台没有 root 权限却必须跑起来的教室电脑。习惯是先让它能用，再回头把代码审一遍、把该测的测了、把过程写下来。
+        </p>
+        <p>
+          技术栈是跟着问题走的，不是反过来：需要离线优先就写 Electron，只需要一扇窗口就用 tkinter，
+          目标是网页形态就上 pywebview，要跨机器协作就写零依赖的 Node 内核；凡是不必联网的地方就不联网。
+        </p>
+        <p class="about-attrs">
+          本站项目均为本人作品。验证码识别仅作技术记录，页面不提供可运行文件。
+        </p>
+        <ul class="contact">
+          <li>
+            <span class="contact-k">GitHub</span>
+            <a href="https://github.com/humble26" target="_blank" rel="noopener noreferrer">github.com/humble26</a>
+          </li>
+          <li>
+            <span class="contact-k">公开仓库</span>
+            <span class="contact-v">
+              <a href="https://github.com/humble26/desktop-workbench" target="_blank" rel="noopener noreferrer">desktop-workbench</a> ·
+              <a href="https://github.com/humble26/dormgrid" target="_blank" rel="noopener noreferrer">dormgrid</a> ·
+              <a href="https://github.com/humble26/audio-transcriber" target="_blank" rel="noopener noreferrer">audio-transcriber</a> ·
+              <a href="https://github.com/humble26/bili-fav-review" target="_blank" rel="noopener noreferrer">bili-fav-review</a> ·
+              <a href="https://github.com/humble26/habit-pet" target="_blank" rel="noopener noreferrer">habit-pet</a> ·
+              <a href="https://github.com/humble26/jiaowodao-desktop" target="_blank" rel="noopener noreferrer">jiaowodao-desktop</a> ·
+              <a href="https://github.com/humble26/lottery-name-picker" target="_blank" rel="noopener noreferrer">lottery-name-picker</a> ·
+              <a href="https://github.com/humble26/markdown-word-converter" target="_blank" rel="noopener noreferrer">markdown-word-converter</a> ·
+              <a href="https://github.com/humble26/portfolio-site" target="_blank" rel="noopener noreferrer">portfolio-site</a>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p>个人项目工作室 · 整理自本地项目档案 · 2026</p>
+    <p class="footer-note">站内项目均为个人自用工具；涉及校园系统的两项仅作技术记录，不提供可运行文件。</p>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>

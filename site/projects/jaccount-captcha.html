@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>04 jAccount 验证码识别 — 个人项目工作室</title>
+<meta name="description" content="把登录时那张四位数字验证码,变成一次安静的后台识别。">
+<meta property="og:title" content="04 jAccount 验证码识别 — 个人项目工作室">
+<meta property="og:description" content="把登录时那张四位数字验证码,变成一次安静的后台识别。">
+
+<meta name="theme-color" content="#3d5afe">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html"><span class="nav-logo">工</span><span>个人项目工作室</span></a>
+    <button class="nav-burger" aria-label="打开菜单" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="../index.html">首页</a>
+      <a href="index.html" aria-current="page">全部项目</a>
+      <a href="../how-it-works.html">工作流</a>
+      <a href="../about.html">关于</a>
+      <span class="theme-toggle" role="group" aria-label="主题">
+        <button data-mode="light" aria-pressed="false">亮</button>
+        <button data-mode="dark" aria-pressed="false">暗</button>
+        <button data-mode="system" aria-pressed="false">跟随</button>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="project-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="../index.html">首页</a> / <a href="index.html">全部项目</a> / jAccount 验证码识别</div>
+      <h1>04 · jAccount 验证码识别</h1>
+      <p class="project-lede">把登录时那张四位数字验证码,变成一次安静的后台识别。</p>
+      <div class="project-meta">
+        <div class="meta-item"><span class="meta-label">版本</span><span class="meta-value">v4.5.2 / v1.0.8</span></div>
+        <div class="meta-item"><span class="meta-label">状态</span><span class="meta-value">已归档</span></div>
+        <div class="meta-item"><span class="meta-label">源码目录</span><span class="meta-value mono">04-jAccount验证码识别</span></div>
+        <div class="meta-item"><span class="meta-label">技术栈</span><span class="meta-value"><span class="tag">ResNet-20</span> <span class="tag">ONNX Runtime Web</span> <span class="tag">浏览器扩展 MV3</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="mock">
+    <div class="mock-bar"><span class="browser-frame-dot"></span><span class="browser-frame-dot"></span><span class="browser-frame-dot"></span><span class="t">jAccount 验证码识别</span></div>
+    <div class="mock-body">
+      <div class="mock-main">
+        <div class="mock-pane" style="text-align:center">
+          <div class="mock-h">识别结果</div>
+          <div style="font-size:2rem;letter-spacing:.5rem;font-weight:800;font-family:var(--mono);color:var(--primary)">7 4 2 9</div>
+          <div class="muted" style="font-size:.72rem;margin-top:6px">ResNet-20 · ONNX Runtime Web · 全本地推理</div>
+        </div>
+        <div class="mock-cards">
+          <div class="mock-card"><div class="n">98.0%</div><div class="l">留出集准确率</div></div>
+          <div class="mock-card"><div class="n">520</div><div class="l">张统一真值集</div></div>
+          <div class="mock-card"><div class="n">0</div><div class="l">次上报</div></div>
+        </div>
+      </div>
+    </div></div><div class="shot-note mock">
+           <strong>界面示意</strong>
+           <span>本项目为桌面应用,尚未留存实拍截图。此处按其真实界面结构与配色程序化绘制,布局与文案以 README 描述为准。</span>
+         </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <h2>它解决什么</h2>
+        <p>浏览器扩展要能自动填验证码,就不能把识别放在云端 —— 那等于把每次登录的凭据都交出去。模型必须完全跑在本地。</p>
+        <h2>怎么做的</h2>
+        <p>ResNet-20 + ONNX Runtime Web,模型与 wasm 全在本地,零上报。分油猴脚本(v4.5.2)与浏览器扩展(MV3,v1.0.8)两种形态。在线准确率 98.0%(留出集),并确认已触及该字体数据密度的边界。</p>
+        
+        
+        <h2 class="anchor-target">关键数字</h2>
+        <div class="metrics">
+          
+            <div class="metric">
+              <div class="metric-num">98.0%</div>
+              <div class="metric-label">在线准确率</div>
+              <div class="metric-note">留出集验证</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">520</div>
+              <div class="metric-label">张统一真值集</div>
+              <div class="metric-note">可复现评估</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">ResNet-20</div>
+              <div class="metric-label">网络结构</div>
+              <div class="metric-note">第 4 位瓶颈攻坚</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">0</div>
+              <div class="metric-label">次上报</div>
+              <div class="metric-note">模型与 wasm 全本地</div>
+            </div>
+        </div>
+        <h2 class="anchor-target">功能</h2>
+        <ul>
+          <li><strong>全本地推理</strong> —— 模型 + wasm 全部本地,不上传任何图像,零上报。</li><li><strong>两种交付形态</strong> —— 油猴脚本与 MV3 浏览器扩展,覆盖不同使用习惯。</li><li><strong>统一真值集评估</strong> —— 构建 520 张真值集,任意 ONNX 模型可一键评估。</li><li><strong>可嵌入</strong> —— 求解库可被宿主程序直接嵌入调用。</li>
+        </ul>
+        
+        
+        
+        <h2>工程细节</h2>
+        <div class="callout">98.0% 是留出集成绩,已确认为该字体数据密度的边界 —— 再往上需要的是新的数据来源,不是调参。</div><div class="callout">归档于 2026-09-22,含独立复审报告与一键全量检验脚本。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="pager">
+        <a href="lottery-rollcall.html"><span class="dir">← 上一个</span><span class="name">03 抽签点名</span></a>
+        <a class="next" href="bili-forgotten-curve.html"><span class="dir">下一个 →</span><span class="name">05 收藏夹遗忘曲线</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <strong>个人项目工作室</strong><br>
+          13 个自用桌面工具与作品 · 内容为个人项目记录,非商业用途
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">首页</a>
+          <a href="../projects/index.html">全部项目</a>
+          <a href="../how-it-works.html">工作流</a>
+          <a href="../about.html">关于</a>
+        </div>
+      </div>
+    </footer>
+<script src="../projects.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>

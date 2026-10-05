@@ -1,0 +1,7 @@
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 站点工具自己维护的描述符，不入库
+*.qoder.site

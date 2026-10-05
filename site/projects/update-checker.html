@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>14 更新检查工具 — 个人项目工作室</title>
+<meta name="description" content="只读探查本机两个 SJTU 应用的更新情况 —— 不下载,不安装,只告诉你有没有新版。">
+<meta property="og:title" content="14 更新检查工具 — 个人项目工作室">
+<meta property="og:description" content="只读探查本机两个 SJTU 应用的更新情况 —— 不下载,不安装,只告诉你有没有新版。">
+
+<meta name="theme-color" content="#3d5afe">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html"><span class="nav-logo">工</span><span>个人项目工作室</span></a>
+    <button class="nav-burger" aria-label="打开菜单" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="../index.html">首页</a>
+      <a href="index.html" aria-current="page">全部项目</a>
+      <a href="../how-it-works.html">工作流</a>
+      <a href="../about.html">关于</a>
+      <span class="theme-toggle" role="group" aria-label="主题">
+        <button data-mode="light" aria-pressed="false">亮</button>
+        <button data-mode="dark" aria-pressed="false">暗</button>
+        <button data-mode="system" aria-pressed="false">跟随</button>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="project-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="../index.html">首页</a> / <a href="index.html">全部项目</a> / 更新检查工具</div>
+      <h1>14 · 更新检查工具</h1>
+      <p class="project-lede">只读探查本机两个 SJTU 应用的更新情况 —— 不下载,不安装,只告诉你有没有新版。</p>
+      <div class="project-meta">
+        <div class="meta-item"><span class="meta-label">版本</span><span class="meta-value">v1.x</span></div>
+        <div class="meta-item"><span class="meta-label">状态</span><span class="meta-value">只读探查</span></div>
+        <div class="meta-item"><span class="meta-label">源码目录</span><span class="meta-value mono">14-更新检查工具</span></div>
+        <div class="meta-item"><span class="meta-label">技术栈</span><span class="meta-value"><span class="tag">Python</span> <span class="tag">JSON / YAML 解析</span> <span class="tag">版本号比较</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="mock">
+    <div class="mock-bar"><span class="browser-frame-dot"></span><span class="browser-frame-dot"></span><span class="browser-frame-dot"></span><span class="t">更新检查工具 — 只读</span></div>
+    <div class="mock-body">
+      <div class="mock-main">
+        <div class="mock-pane">
+          <div class="mock-h">SJTU Canvas Helper</div>
+          <div class="mock-line" style="width:60%">本地 3.0.11 → 最新 3.0.12　<span style="color:#f59e0b">有更新</span></div>
+        </div>
+        <div class="mock-pane">
+          <div class="mock-h">j-aide（交我汇）</div>
+          <div class="mock-line" style="width:60%">官方源暂无信息（HTTP 404）</div>
+        </div>
+      </div>
+    </div></div><div class="shot-note mock">
+           <strong>界面示意</strong>
+           <span>本项目为桌面应用,尚未留存实拍截图。此处按其真实界面结构与配色程序化绘制,布局与文案以 README 描述为准。</span>
+         </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <h2>它解决什么</h2>
+        <p>两个应用各自检查更新要分别点开,更麻烦的是不知道它们各自的官方更新源到底是哪个 URL。</p>
+        <h2>怎么做的</h2>
+        <p>从两个应用各自的官方更新源取最新版本号,与本地 Uninstall DisplayVersion 做数字段比较。只读承诺:不下载不安装不修改。更新源不是猜的 —— 一个内嵌在官方 EXE 二进制里,另一个来自应用自身日志中的实际请求地址。</p>
+        
+        
+        <h2 class="anchor-target">关键数字</h2>
+        <div class="metrics">
+          
+            <div class="metric">
+              <div class="metric-num">2</div>
+              <div class="metric-label">个应用</div>
+              <div class="metric-note">Canvas Helper / j-aide</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">只读</div>
+              <div class="metric-label">操作承诺</div>
+              <div class="metric-note">不下载不安装</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">0/1</div>
+              <div class="metric-label">CLI 退出码</div>
+              <div class="metric-note">1 表示有检查项网络失败</div>
+            </div>
+        </div>
+        <h2 class="anchor-target">功能</h2>
+        <ul>
+          <li><strong>更新源有依据</strong> —— Tauri 清单 URL 内嵌在 EXE 中,electron-updater 订阅源来自应用日志。</li><li><strong>只读承诺</strong> —— 只探查和比较,不下载不安装不修改任何内容。</li><li><strong>数字段比较</strong> —— 按数字段比版本号,3.0.11 &lt; 3.0.12,不用字符串比较。</li><li><strong>如实显示未知</strong> —— 官方源 404 时显示「暂无信息」,不谎报已是最新。</li><li><strong>无黑窗口启动</strong> —— pythonw 启动,窗口自动开始检查。</li>
+        </ul>
+        
+        
+        
+        <h2>工程细节</h2>
+        <div class="callout">截至 2026-10-01,j-aide 的 latest.yml 一直返回 HTTP 404,其自身启动自检也得到同样结果。工具如实显示此状态 —— 这表示官方尚未在该渠道发布新版信息,不代表已确认没有新版。</div><div class="callout">等官方发布后无需任何修改即可自动识别。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="pager">
+        <a href="audio-transcribe.html"><span class="dir">← 上一个</span><span class="name">13 音频转写工具</span></a>
+        <a class="next" href="geo-captcha.html"><span class="dir">下一个 →</span><span class="name">15 几何验证码工具集</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <strong>个人项目工作室</strong><br>
+          13 个自用桌面工具与作品 · 内容为个人项目记录,非商业用途
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">首页</a>
+          <a href="../projects/index.html">全部项目</a>
+          <a href="../how-it-works.html">工作流</a>
+          <a href="../about.html">关于</a>
+        </div>
+      </div>
+    </footer>
+<script src="../projects.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>

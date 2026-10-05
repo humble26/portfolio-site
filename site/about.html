@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关于 — 个人项目工作室</title>
+<meta name="description" content="关于这个展示站点:E:/harness 工作区的由来、素材来源与标注规则、数字的出处,以及哪些内容不是实拍。">
+<meta property="og:title" content="关于 — 个人项目工作室">
+<meta property="og:description" content="站点由来、素材标注规则、数字出处,以及哪些内容不是实拍。">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+<div id="nav"></div>
+
+<main id="main">
+  <section class="project-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="index.html">首页</a> / 关于</div>
+      <h1>关于这个站点</h1>
+      <p class="project-lede">
+        这不是一份产品发布页,而是个人工具的归档与说明。
+        所以这一页专门交代:素材从哪来、哪些是实拍、数字从哪来、哪些不是实拍。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 工作区由来 ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <h2>这些项目在哪</h2>
+        <p>
+          全部项目在 <code>E:\harness</code> 一个工作区里。2026-09-24 做过一次归档整理,
+          从「12 个平铺目录 + 11 个散落文件」重整为编号分区,并逐项目验证过完整性。
+        </p>
+        <p>工作区里的分区不全是产品:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>分区</th><th>是什么</th></tr></thead>
+            <tbody>
+              <tr><td><code>01</code>、<code>03</code> – <code>09</code>、<code>11</code> – <code>15</code></td><td>13 个项目本体,本站展示的就是这 13 个</td></tr>
+              <tr><td><code>10</code>-作品集站点</td><td>展示站点的存放处。<strong>本站(<code>site/</code>)就在这个目录下</strong>,与更早的单页版 <code>web/</code> 并存 —— 它是站点本身,不是被展示的产品,所以不在项目列表里</td></tr>
+              <tr><td><code>90</code> – <code>95</code></td><td>报告归档、内容产出、交付物、文档工具、个人文档、课程作业 —— 工作区副产物</td></tr>
+              <tr><td><code>_工作区索引</code></td><td>归档整理的脚本、日志、映射表与验证报告</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          编号跳过 10,是因为 <code>10-作品集站点</code> 本身是站点而非产品;
+          编号 02 的项目未列入本站展示。这就是「13 个」而不是「15 个」的原因。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 素材标注 ============ -->
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="prose">
+        <h2 class="anchor-target">素材标注规则</h2>
+        <p>
+          桌面应用没法用 URL 抓图,但硬凑一张假截图混进真实展示里是误导。
+          所以本站的图分三类,页面上逐张标注,不合并、不含糊。
+        </p>
+
+        <h3>① 实拍截图(14 张)</h3>
+        <p>来自 4 个项目实际运行的界面,共 14 张 + 1 个动图。页面上带<span class="tag tag-live" style="margin:0 4px">绿色标记</span>。</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>项目</th><th>数量</th><th>内容</th></tr></thead>
+            <tbody>
+              <tr><td>05 收藏夹遗忘曲线</td><td class="num">7</td><td>首页、复习页、收藏夹列表、卡片库、搜索、统计、扫码登录</td></tr>
+              <tr><td>06 桌面宠物</td><td class="num">2 + 1 GIF</td><td>主界面、GitHub 远程投喂、rua 互动动图</td></tr>
+              <tr><td>11 宿舍超算</td><td class="num">3</td><td>仪表盘、Electron 桌面端、Mandelbrot 渲染成品</td></tr>
+              <tr><td>15 几何验证码</td><td class="num">1</td><td>求解 demo</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>② 界面示意(8 个项目)</h3>
+        <p>
+          这 8 个是纯桌面应用,既无法用 URL 抓图,也没有历史截图留存。
+          页面上带<span class="tag tag-accent" style="margin:0 4px">橙色标记</span>的图是按各项目 README 描述的<strong>真实界面结构与配色程序化绘制</strong>的示意图。
+        </p>
+        <div class="callout callout-warn">
+          <strong>它是示意图,不是截图。</strong>布局分区、控件类型、配色依据 README 的自述还原,
+          但<strong>不代表截图原貌</strong> —— 真实界面的间距、字号、细节都可能不同。数字与文案若出现在示意图里,同样取自各项目 README 的自述数据。
+        </div>
+
+        <h3>③ 可交互源文件(1 个项目)</h3>
+        <p>
+          09 军训视频脚本本身就是交互 HTML(拍摄分镜表 + 成片脚本两套页面),既不是截图也不是示意图。
+          源文件在 <code>09-军训视频脚本\</code> 下,双击即开。详情页标注了具体路径。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 数字出处 ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <h2 class="anchor-target">数字从哪来</h2>
+        <p>
+          站上出现的每个数字都能对账。出处只有三类:<strong>实际界面截图</strong>、<strong>项目 README 自述</strong>、
+          <strong>自动化测试产物</strong>。没有第四类。
+        </p>
+
+        <h3>来自截图的实数据</h3>
+        <ul>
+          <li><strong>541 / 539 / 529</strong> —— 05 首页实拍:541 收藏视频、539 今日待复习、529 已生成卡片</li>
+          <li><strong>32/32 瓦片、2 个节点</strong> —— 11 仪表盘实拍,对应 <code>e2e-result.json</code> 里 <code>done: 32, total: 32</code></li>
+        </ul>
+
+        <h3>来自测试产物的实测成绩</h3>
+        <ul>
+          <li>
+            <strong>几何验证码四题型</strong> —— 由 <code>python -m geo_captcha run --n 200 --seed 20261003</code> 产出,
+            800 例逐例可复现:滑块 100% / 误差 0.285px、点选 91.0%、旋转 98.0% / MAE 1.14°、空间 97.0%
+          </li>
+          <li>
+            <strong>jAccount 98.0%</strong> —— 留出集准确率,README 明确注明已确认为该字体数据密度的边界
+          </li>
+          <li>
+            <strong>桌面工作台 123 项回归测试</strong> —— 来自 <code>package.json</code> 的 test 脚本所列测试文件
+          </li>
+        </ul>
+
+        <h3>来自版本号与目录</h3>
+        <ul>
+          <li>各项目版本取自 <code>package.json</code>、README 标题或归档说明</li>
+          <li>文件规模与技术栈取自对应 <code>package.json</code> / <code>requirements.txt</code> / <code>pyproject.toml</code></li>
+          <li>「13 个项目」「8 个示意图」是本次实际清点结果,不是估计值</li>
+        </ul>
+
+        <div class="callout">
+          <strong>关于 98.0% 这个数:</strong>它是留出集成绩,不是"任意环境下都能到 98%"。
+          README 里已确认为该字体数据密度的边界 —— 再往上要的是新数据来源,不是调参。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 这批项目的共性 ============ -->
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="prose">
+        <h2>这批项目的共同点</h2>
+        <p>抛开功能,13 个项目在工程上守的是同几条:</p>
+        <ul>
+          <li><strong>数据本地优先</strong> —— 13 音频转写明确"音频不出本机",04 验证码识别模型与 wasm 全本地零上报,14 更新检查工具是只读的。数据要出本机的地方,都由用户自己决定</li>
+          <li><strong>能少装一个依赖就少装</strong> —— 03 抽签点名、08 Markdown转Word 明确零第三方依赖,11 宿舍超算核心零依赖(仅需 Node ≥18)</li>
+          <li><strong>把坑写下来</strong> —— 12 Token领取助手 专门解释了"双击窗口一闪就没了"是解释器缺 tcl/tk;01 桌面工作台 记录了 v1.8.2/1.8.3 空白屏的 IPC 校验根因</li>
+          <li><strong>失败要留痕</strong> —— 12 的任何启动崩溃都写进 logs 并弹框;14 在官方源 404 时如实显示"暂无信息"而不是谎报已是最新</li>
+          <li><strong>改动留档</strong> —— 工作区本身按 _历史快照 / 项目归档 / 交付物 分层保留历史版本,能回退对照</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 使用说明 ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <h2>站点使用说明</h2>
+        <p>这个站点是纯静态的,零外部依赖 —— 没有 CDN、没有外部字体、没有构建产物里的框架运行时。</p>
+        <ul>
+          <li><strong>主题</strong>:导航右侧切换亮 / 暗 / 跟随系统三态,选择存在本地。也可用键盘 <code>1</code> <code>2</code> <code>3</code> 切换</li>
+          <li><strong>本地预览</strong>:在站点目录执行 <code>python -m http.server 8000</code> 后打开 <code>http://localhost:8000</code></li>
+          <li><strong>改内容</strong>:所有项目数据集中在 <code>projects.js</code> 一个文件里。改完执行 <code>node build-pages.js</code> 重新生成 13 个详情页 —— 不必手改 HTML,避免文案与截图路径多处漂移</li>
+        </ul>
+
+        <h3>文件结构</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>文件</th><th>作用</th></tr></thead>
+            <tbody>
+              <tr><td><code>index.html</code></td><td>首页:hero、精选四个、五步工作流摘要、全部项目一览</td></tr>
+              <tr><td><code>projects/index.html</code></td><td>13 个项目总览 + 技术栈分布 + 形态与依赖表</td></tr>
+              <tr><td><code>projects/*.html</code></td><td>13 个详情页,由 <code>build-pages.js</code> 从数据层生成,<strong>不要手改</strong></td></tr>
+              <tr><td><code>how-it-works.html</code></td><td>工作流页:05 五步全链路 + 11 算力链路,全部实拍</td></tr>
+              <tr><td><code>about.html</code></td><td>本页:素材标注规则与数字出处</td></tr>
+              <tr><td><code>projects.js</code></td><td><strong>唯一数据源</strong> —— 13 个项目的元数据、文案、指标、截图引用</td></tr>
+              <tr><td><code>app.js</code></td><td>主题切换、导航、组件渲染函数、程序化示意图</td></tr>
+              <tr><td><code>styles.css</code></td><td>设计令牌、深色模式、响应式、浏览器边框组件</td></tr>
+              <tr><td><code>build-pages.js</code></td><td>从数据层批量生成详情页</td></tr>
+              <tr><td><code>screenshots/</code></td><td>实拍截图与动图</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <strong>要加新项目:</strong>在 <code>projects.js</code> 里加一条,填上 lede / problem / solution /
+          features / metrics,再执行 <code>node build-pages.js</code>。首页、总览页、详情页会自动跟上。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 边界 ============ -->
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="prose">
+        <h2>说明与边界</h2>
+        <ul>
+          <li>内容为个人项目记录,非商业用途</li>
+          <li>15 几何验证码工具集仅供学习研究,以及对与你拥有或已获授权测试的系统使用</li>
+          <li>涉及第三方服务的项目(05 需自带 LLM API Key、07 同步网页版数据)其可用性取决于对应服务方</li>
+        </ul>
+        <p class="muted">
+          本站点与其中列出的项目均为个人作品记录。页面上的实拍截图仅用于说明项目界面本身。
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="projects.js"></script>
+<script src="app.js"></script>
+<script>
+document.getElementById("nav").innerHTML = renderNav("about.html");
+document.getElementById("footer").innerHTML = renderFooter(0);
+</script>
+</body>
+</html>

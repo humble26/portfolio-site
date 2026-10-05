@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>05 收藏夹遗忘曲线 — 个人项目工作室</title>
+<meta name="description" content="把 B 站收藏夹变成一个会主动找你复习的知识库 —— 收藏不是学会,复习才是。">
+<meta property="og:title" content="05 收藏夹遗忘曲线 — 个人项目工作室">
+<meta property="og:description" content="把 B 站收藏夹变成一个会主动找你复习的知识库 —— 收藏不是学会,复习才是。">
+<meta property="og:image" content="../screenshots/projects/05-01-home.png">
+<meta name="theme-color" content="#3d5afe">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html"><span class="nav-logo">工</span><span>个人项目工作室</span></a>
+    <button class="nav-burger" aria-label="打开菜单" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="../index.html">首页</a>
+      <a href="index.html" aria-current="page">全部项目</a>
+      <a href="../how-it-works.html">工作流</a>
+      <a href="../about.html">关于</a>
+      <span class="theme-toggle" role="group" aria-label="主题">
+        <button data-mode="light" aria-pressed="false">亮</button>
+        <button data-mode="dark" aria-pressed="false">暗</button>
+        <button data-mode="system" aria-pressed="false">跟随</button>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="project-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="../index.html">首页</a> / <a href="index.html">全部项目</a> / 收藏夹遗忘曲线</div>
+      <h1>05 · 收藏夹遗忘曲线</h1>
+      <p class="project-lede">把 B 站收藏夹变成一个会主动找你复习的知识库 —— 收藏不是学会,复习才是。</p>
+      <div class="project-meta">
+        <div class="meta-item"><span class="meta-label">版本</span><span class="meta-value">v0.4.1</span></div>
+        <div class="meta-item"><span class="meta-label">状态</span><span class="meta-value">自用主力</span></div>
+        <div class="meta-item"><span class="meta-label">源码目录</span><span class="meta-value mono">05-B站收藏夹遗忘曲线</span></div>
+        <div class="meta-item"><span class="meta-label">技术栈</span><span class="meta-value"><span class="tag">Python</span> <span class="tag">SQLite + FTS5</span> <span class="tag">LLM 摘要</span> <span class="tag">SM-2 算法</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      
+    <div class="browser-frame">
+      <div class="browser-frame-bar">
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-url">首页 —— 今日待复习数量与四步上手引导</span>
+      </div>
+      <img src="../screenshots/projects/05-01-home.png" alt="首页 —— 今日待复习数量与四步上手引导" loading="lazy">
+    </div>
+    <div class="shot-note real">
+      <strong>实拍截图</strong>
+      <span>首页 —— 今日待复习数量与四步上手引导</span>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <h2>它解决什么</h2>
+        <p>点收藏只制造了「我学过了」的错觉。真正形成记忆的是主动回忆加间隔重复,但收藏夹只是个越攒越长的列表,从不会提醒你该回来看。</p>
+        <h2>怎么做的</h2>
+        <p>同步收藏夹 → 拉取字幕 → LLM 生成复习卡片 → 遗忘曲线到期提醒 → 主动回忆评分 → 全文检索。用 SM-2 简化算法为每张卡片排复习时间:记得牢就隔久一点,忘了就明天再见。</p>
+        
+        
+        <h2 class="anchor-target">关键数字</h2>
+        <div class="metrics">
+          
+            <div class="metric">
+              <div class="metric-num">541</div>
+              <div class="metric-label">已同步收藏视频</div>
+              <div class="metric-note">来自真实使用截图</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">539</div>
+              <div class="metric-label">今日待复习卡片</div>
+              <div class="metric-note">新卡 530 / 复习 9</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">529</div>
+              <div class="metric-label">已生成卡片</div>
+              <div class="metric-note">摘要在跑</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">8 条/次</div>
+              <div class="metric-label">批量摘要合并调用</div>
+              <div class="metric-note">省请求省成本</div>
+            </div>
+        </div>
+        <h2 class="anchor-target">功能</h2>
+        <ul>
+          <li><strong>遗忘曲线复习</strong> —— 新卡先读内容后评估,复习卡先回忆再看答案,按忘了/模糊/记得自动排下次时间。</li><li><strong>摘要三档全覆盖</strong> —— 有字幕精摘 / 无字幕批量轻摘(8 条/次合并调用)/ 无信息零 AI 兜底。</li><li><strong>增量同步不重复</strong> —— 三段式断点续跑,单视频失败不炸全程,增量永不重复生成。</li><li><strong>卡片库与统计</strong> —— 全部卡片的书架,状态徽章 + 筛选;未来 7 天到期分布 + 近 14 天活跃度。</li><li><strong>全文检索</strong> —— FTS5 trigram 中文子串搜索标题/简介/字幕/摘要,LIKE 兜底。</li><li><strong>Anki 导出</strong> —— 一键导出 .apkg 牌组,按 BV 号稳定去重,可反复导入。</li><li><strong>键盘快捷键</strong> —— 空格显示答案 / 1-2-3 评分 / S 跳过,支持评分撤销。</li><li><strong>演示模式</strong> —— demo 内置 4 张卡片,不登录不花钱即可体验全流程。</li>
+        </ul>
+        <div class="shot-grid"><figure>
+    <div class="browser-frame">
+      <div class="browser-frame-bar">
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-url">复习页 —— 新卡先自读内容再评估</span>
+      </div>
+      <img src="../screenshots/projects/05-02-review.png" alt="复习页 —— 新卡先自读内容再评估" loading="lazy">
+    </div>
+    <div class="shot-note real">
+      <strong>实拍截图</strong>
+      <span>复习页 —— 新卡先自读内容再评估</span>
+    </div></figure><figure>
+    <div class="browser-frame">
+      <div class="browser-frame-bar">
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-url">卡片库 —— 全部卡片的书架,状态徽章与筛选</span>
+      </div>
+      <img src="../screenshots/projects/05-04-library.png" alt="卡片库 —— 全部卡片的书架,状态徽章与筛选" loading="lazy">
+    </div>
+    <div class="shot-note real">
+      <strong>实拍截图</strong>
+      <span>卡片库 —— 全部卡片的书架,状态徽章与筛选</span>
+    </div></figure><figure>
+    <div class="browser-frame">
+      <div class="browser-frame-bar">
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-url">学习统计 —— 到期分布与复习活跃度</span>
+      </div>
+      <img src="../screenshots/projects/05-06-stats.png" alt="学习统计 —— 到期分布与复习活跃度" loading="lazy">
+    </div>
+    <div class="shot-note real">
+      <strong>实拍截图</strong>
+      <span>学习统计 —— 到期分布与复习活跃度</span>
+    </div></figure><figure>
+    <div class="browser-frame">
+      <div class="browser-frame-bar">
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-url">搜索 —— FTS5 trigram 中文子串全文检索</span>
+      </div>
+      <img src="../screenshots/projects/05-05-search.png" alt="搜索 —— FTS5 trigram 中文子串全文检索" loading="lazy">
+    </div>
+    <div class="shot-note real">
+      <strong>实拍截图</strong>
+      <span>搜索 —— FTS5 trigram 中文子串全文检索</span>
+    </div></figure><figure>
+    <div class="browser-frame">
+      <div class="browser-frame-bar">
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-url">扫码登录 —— cookie 只存本机</span>
+      </div>
+      <img src="../screenshots/projects/05-07-login.png" alt="扫码登录 —— cookie 只存本机" loading="lazy">
+    </div>
+    <div class="shot-note real">
+      <strong>实拍截图</strong>
+      <span>扫码登录 —— cookie 只存本机</span>
+    </div></figure></div>
+        
+        
+        <h2>工程细节</h2>
+        <div class="callout">界面已重构为本地 WebUI + 独立 exe 分发,无需 Python,安装器一键升级。</div><div class="callout">Windows Toast + 可选 Server酱微信推送;每日首次使用自动备份数据库,保留最近 7 份。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="pager">
+        <a href="jaccount-captcha.html"><span class="dir">← 上一个</span><span class="name">04 jAccount 验证码识别</span></a>
+        <a class="next" href="habit-pet.html"><span class="dir">下一个 →</span><span class="name">06 桌面宠物 · 鲸鱼娘</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <strong>个人项目工作室</strong><br>
+          13 个自用桌面工具与作品 · 内容为个人项目记录,非商业用途
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">首页</a>
+          <a href="../projects/index.html">全部项目</a>
+          <a href="../how-it-works.html">工作流</a>
+          <a href="../about.html">关于</a>
+        </div>
+      </div>
+    </footer>
+<script src="../projects.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>01 桌面工作台 — 个人项目工作室</title>
+<meta name="description" content="把散落在剪贴板、文件夹、便签和 AI 额度里的碎片,收进一个常驻桌面的工作台。">
+<meta property="og:title" content="01 桌面工作台 — 个人项目工作室">
+<meta property="og:description" content="把散落在剪贴板、文件夹、便签和 AI 额度里的碎片,收进一个常驻桌面的工作台。">
+
+<meta name="theme-color" content="#3d5afe">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html"><span class="nav-logo">工</span><span>个人项目工作室</span></a>
+    <button class="nav-burger" aria-label="打开菜单" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="../index.html">首页</a>
+      <a href="index.html" aria-current="page">全部项目</a>
+      <a href="../how-it-works.html">工作流</a>
+      <a href="../about.html">关于</a>
+      <span class="theme-toggle" role="group" aria-label="主题">
+        <button data-mode="light" aria-pressed="false">亮</button>
+        <button data-mode="dark" aria-pressed="false">暗</button>
+        <button data-mode="system" aria-pressed="false">跟随</button>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="project-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="../index.html">首页</a> / <a href="index.html">全部项目</a> / 桌面工作台</div>
+      <h1>01 · 桌面工作台</h1>
+      <p class="project-lede">把散落在剪贴板、文件夹、便签和 AI 额度里的碎片,收进一个常驻桌面的工作台。</p>
+      <div class="project-meta">
+        <div class="meta-item"><span class="meta-label">版本</span><span class="meta-value">v1.9.1</span></div>
+        <div class="meta-item"><span class="meta-label">状态</span><span class="meta-value">持续迭代</span></div>
+        <div class="meta-item"><span class="meta-label">源码目录</span><span class="meta-value mono">01-桌面工作台</span></div>
+        <div class="meta-item"><span class="meta-label">技术栈</span><span class="meta-value"><span class="tag">Electron</span> <span class="tag">Node.js</span> <span class="tag">Tesseract.js</span> <span class="tag">原生 JS</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="mock">
+    <div class="mock-bar"><span class="browser-frame-dot"></span><span class="browser-frame-dot"></span><span class="browser-frame-dot"></span><span class="t">桌面工作台 v1.9.1</span></div>
+    <div class="mock-body">
+      <div class="mock-side">
+        <div class="row on">📌 快速添加</div>
+        <div class="row">📋 剪贴板历史</div>
+        <div class="row">📁 文件整理</div>
+        <div class="row">✅ 待办 / 便签</div>
+        <div class="row">⏱ 打卡统计</div>
+        <div class="row">🤖 AI 余额</div>
+      </div>
+      <div class="mock-main">
+        <div class="mock-pane">
+          <div class="mock-h">快速添加</div>
+          <div class="mock-input">随手记一句…（支持拖入图片、截图 OCR）</div>
+          <span class="mock-btn">保存</span><span class="mock-btn ghost">粘贴截图</span>
+        </div>
+        <div class="mock-cards">
+          <div class="mock-card"><div class="n">12</div><div class="l">待办事项</div></div>
+          <div class="mock-card"><div class="n">48</div><div class="l">剪贴板条目</div></div>
+          <div class="mock-card"><div class="n">6</div><div class="l">本周打卡</div></div>
+        </div>
+      </div>
+    </div></div><div class="shot-note mock">
+           <strong>界面示意</strong>
+           <span>本项目为桌面应用,尚未留存实拍截图。此处按其真实界面结构与配色程序化绘制,布局与文案以 README 描述为准。</span>
+         </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <h2>它解决什么</h2>
+        <p>日常真正耗神的不是某一件大事,而是几十件小事:临时记一句、临时存一张图、临时查个路径、临时看还有多少额度。每一件单看都不值得开一个软件,但堆在一起就是持续的打断。</p>
+        <h2>怎么做的</h2>
+        <p>桌面覆盖层常驻在所有程序之上,快速添加 + 剪贴板历史 + 文件整理 + 打卡统计把这些碎片收进同一个数据仓库。主进程领域逻辑拆成 10 个可脱离 Electron 单测的模块,数据只落在本机。</p>
+        
+        
+        <h2 class="anchor-target">关键数字</h2>
+        <div class="metrics">
+          
+            <div class="metric">
+              <div class="metric-num">10</div>
+              <div class="metric-label">主进程领域模块</div>
+              <div class="metric-note">均可脱离 Electron 单测</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">123</div>
+              <div class="metric-label">项回归测试</div>
+              <div class="metric-note">node --test 覆盖</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">27</div>
+              <div class="metric-label">个渲染层脚本</div>
+              <div class="metric-note">原 app.js 已按视图拆分</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">MIT</div>
+              <div class="metric-label">开源许可</div>
+              <div class="metric-note">GitHub 公开发布</div>
+            </div>
+        </div>
+        <h2 class="anchor-target">功能</h2>
+        <ul>
+          <li><strong>桌面覆盖层,随手可达</strong> —— 不切换窗口就能记录,避免为了记一句话而打断手头的事。</li><li><strong>剪贴板历史 + 离线 OCR</strong> —— 内置 chi_sim + eng 语言模型,截图文字直接转成可搜索文本。</li><li><strong>AI 额度监测</strong> —— 多家 AI 客户端余额集中在一处,不用逐个点开确认还剩多少。</li><li><strong>数据仓库与迁移可测</strong> —— 10 个领域模块均可脱离 Electron 单测,升级不丢用户数据。</li>
+        </ul>
+        
+        
+        
+        <h2>工程细节</h2>
+        <div class="callout">v1.8.2 / v1.8.3 启动后界面全空白 —— IPC 来源校验依赖了 Electron 内部实现细节,把自身请求全部拒掉。v1.8.4 起改为显式契约校验。</div><div class="callout">用户数据保存在 %APPDATA%\桌面工作台,覆盖安装不丢数据。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="pager">
+        <span></span>
+        <a class="next" href="lottery-rollcall.html"><span class="dir">下一个 →</span><span class="name">03 抽签点名</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <strong>个人项目工作室</strong><br>
+          13 个自用桌面工具与作品 · 内容为个人项目记录,非商业用途
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">首页</a>
+          <a href="../projects/index.html">全部项目</a>
+          <a href="../how-it-works.html">工作流</a>
+          <a href="../about.html">关于</a>
+        </div>
+      </div>
+    </footer>
+<script src="../projects.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>

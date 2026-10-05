@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13 音频转写工具 — 个人项目工作室</title>
+<meta name="description" content="把音频丢进去,拿回带时间戳的文字 —— 全程本地推理,音频不出本机。">
+<meta property="og:title" content="13 音频转写工具 — 个人项目工作室">
+<meta property="og:description" content="把音频丢进去,拿回带时间戳的文字 —— 全程本地推理,音频不出本机。">
+
+<meta name="theme-color" content="#3d5afe">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html"><span class="nav-logo">工</span><span>个人项目工作室</span></a>
+    <button class="nav-burger" aria-label="打开菜单" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="../index.html">首页</a>
+      <a href="index.html" aria-current="page">全部项目</a>
+      <a href="../how-it-works.html">工作流</a>
+      <a href="../about.html">关于</a>
+      <span class="theme-toggle" role="group" aria-label="主题">
+        <button data-mode="light" aria-pressed="false">亮</button>
+        <button data-mode="dark" aria-pressed="false">暗</button>
+        <button data-mode="system" aria-pressed="false">跟随</button>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="project-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="../index.html">首页</a> / <a href="index.html">全部项目</a> / 音频转写工具</div>
+      <h1>13 · 音频转写工具</h1>
+      <p class="project-lede">把音频丢进去,拿回带时间戳的文字 —— 全程本地推理,音频不出本机。</p>
+      <div class="project-meta">
+        <div class="meta-item"><span class="meta-label">版本</span><span class="meta-value">v1.x</span></div>
+        <div class="meta-item"><span class="meta-label">状态</span><span class="meta-value">本地推理</span></div>
+        <div class="meta-item"><span class="meta-label">源码目录</span><span class="meta-value mono">13-音频转写工具</span></div>
+        <div class="meta-item"><span class="meta-label">技术栈</span><span class="meta-value"><span class="tag">faster-whisper</span> <span class="tag">PySide6</span> <span class="tag">int8 量化</span> <span class="tag">python-docx</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="mock">
+    <div class="mock-bar"><span class="browser-frame-dot"></span><span class="browser-frame-dot"></span><span class="browser-frame-dot"></span><span class="t">音频转写工具 — 本地推理</span></div>
+    <div class="mock-body">
+      <div class="mock-main">
+        <div class="mock-pane" style="text-align:center;border-style:dashed">
+          <div class="mock-h">把音频文件或整个文件夹拖进这里</div>
+          <div class="muted" style="font-size:.74rem">faster-whisper · CPU int8 · 音频不出本机</div>
+        </div>
+        <div class="mock-cards">
+          <div class="mock-card"><div class="n">4</div><div class="l">输出格式</div></div>
+          <div class="mock-card"><div class="n">int8</div><div class="l">量化等级</div></div>
+          <div class="mock-card"><div class="n">0</div><div class="l">次上传</div></div>
+        </div>
+      </div>
+    </div></div><div class="shot-note mock">
+           <strong>界面示意</strong>
+           <span>本项目为桌面应用,尚未留存实拍截图。此处按其真实界面结构与配色程序化绘制,布局与文案以 README 描述为准。</span>
+         </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <h2>它解决什么</h2>
+        <p>会议录音、课程音频、访谈、播客都需要文字稿。上传云端转写意味着把未公开的音频交给第三方,而这些内容往往正是最不该外流的。</p>
+        <h2>怎么做的</h2>
+        <p>faster-whisper 在 CPU 上跑 int8 量化推理,音频不出本机。桌面端拖入文件或整个文件夹即自动开始,完成后在音频所在目录产出 TXT 与 Word。</p>
+        
+        
+        <h2 class="anchor-target">关键数字</h2>
+        <div class="metrics">
+          
+            <div class="metric">
+              <div class="metric-num">0</div>
+              <div class="metric-label">次上传</div>
+              <div class="metric-note">音频不出本机</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">4</div>
+              <div class="metric-label">种输出格式</div>
+              <div class="metric-note">TXT/SRT/Word/纯文本</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">int8</div>
+              <div class="metric-label">量化等级</div>
+              <div class="metric-note">CPU 上可跑</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">10-30</div>
+              <div class="metric-label">秒首启加载</div>
+              <div class="metric-note">large-v3 之后走缓存</div>
+            </div>
+        </div>
+        <h2 class="anchor-target">功能</h2>
+        <ul>
+          <li><strong>全程本地推理</strong> —— faster-whisper 在 CPU 上跑 int8,音频不上传。</li><li><strong>拖入即用</strong> —— 拖入文件或整个文件夹,自动开始转写。</li><li><strong>带时间戳</strong> —— 输出带时间戳的转写结果。</li><li><strong>四种产出</strong> —— TXT / 纯文本 / SRT 字幕 / Word 文档。</li><li><strong>模型缓存复用</strong> —— 首次加载 large-v3 约 10-30 秒,之后同模型缓存复用不再重复加载。</li>
+        </ul>
+        
+        
+        
+        <h2>工程细节</h2>
+        <div class="callout">首次转写要先加载模型,large-v3 约需 10-30 秒,之后同一模型会缓存复用。</div><div class="callout">转写经验与运行手册见 TRANSCRIPTION_EXPERIENCE_GUIDE.md 与 TRANSCRIPTION_RUNBOOK.md。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="pager">
+        <a href="token-claimer.html"><span class="dir">← 上一个</span><span class="name">12 Token 领取助手</span></a>
+        <a class="next" href="update-checker.html"><span class="dir">下一个 →</span><span class="name">14 更新检查工具</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <strong>个人项目工作室</strong><br>
+          13 个自用桌面工具与作品 · 内容为个人项目记录,非商业用途
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">首页</a>
+          <a href="../projects/index.html">全部项目</a>
+          <a href="../how-it-works.html">工作流</a>
+          <a href="../about.html">关于</a>
+        </div>
+      </div>
+    </footer>
+<script src="../projects.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>

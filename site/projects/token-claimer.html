@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12 Token 领取助手 — 个人项目工作室</title>
+<meta name="description" content="到点自动启动 AI 客户端领取每日 token —— 三个客户端,八个时间点,一次不用管。">
+<meta property="og:title" content="12 Token 领取助手 — 个人项目工作室">
+<meta property="og:description" content="到点自动启动 AI 客户端领取每日 token —— 三个客户端,八个时间点,一次不用管。">
+
+<meta name="theme-color" content="#3d5afe">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html"><span class="nav-logo">工</span><span>个人项目工作室</span></a>
+    <button class="nav-burger" aria-label="打开菜单" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="../index.html">首页</a>
+      <a href="index.html" aria-current="page">全部项目</a>
+      <a href="../how-it-works.html">工作流</a>
+      <a href="../about.html">关于</a>
+      <span class="theme-toggle" role="group" aria-label="主题">
+        <button data-mode="light" aria-pressed="false">亮</button>
+        <button data-mode="dark" aria-pressed="false">暗</button>
+        <button data-mode="system" aria-pressed="false">跟随</button>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="project-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="../index.html">首页</a> / <a href="index.html">全部项目</a> / Token 领取助手</div>
+      <h1>12 · Token 领取助手</h1>
+      <p class="project-lede">到点自动启动 AI 客户端领取每日 token —— 三个客户端,八个时间点,一次不用管。</p>
+      <div class="project-meta">
+        <div class="meta-item"><span class="meta-label">版本</span><span class="meta-value">v1.x</span></div>
+        <div class="meta-item"><span class="meta-label">状态</span><span class="meta-value">日常运行中</span></div>
+        <div class="meta-item"><span class="meta-label">源码目录</span><span class="meta-value mono">12-Token领取助手</span></div>
+        <div class="meta-item"><span class="meta-label">技术栈</span><span class="meta-value"><span class="tag">Python 3.8+</span> <span class="tag">tkinter</span> <span class="tag">comtypes</span> <span class="tag">UIAutomation</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="mock">
+    <div class="mock-bar"><span class="browser-frame-dot"></span><span class="browser-frame-dot"></span><span class="browser-frame-dot"></span><span class="t">Token 领取助手</span></div>
+    <div class="mock-body" style="flex-direction:column">
+      <div class="mock-main">
+        <div class="mock-pane">
+          <div class="mock-h">① 应用</div>
+          <div class="mock-line" style="width:90%">WorkBuddy<span class="muted"> — 每天 ▾</span></div>
+          <div class="mock-line" style="width:90%">TraeWork CN<span class="muted"> — 仅工作日 ▾</span></div>
+          <div class="mock-line" style="width:75%">ZCode<span class="muted"> — 每天 ▾</span></div>
+        </div>
+        <div class="mock-pane">
+          <div class="mock-h">② 定时计划</div>
+          <span class="mock-btn">08:00</span><span class="mock-btn ghost">12:00</span><span class="mock-btn ghost">20:00</span>
+        </div>
+      </div>
+    </div></div><div class="shot-note mock">
+           <strong>界面示意</strong>
+           <span>本项目为桌面应用,尚未留存实拍截图。此处按其真实界面结构与配色程序化绘制,布局与文案以 README 描述为准。</span>
+         </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <h2>它解决什么</h2>
+        <p>每天要在固定时间点开几个客户端点领取,错一个就少一天额度。手动记时间点、点按钮,这事烦但不难,所以永远被拖到忘记。</p>
+        <h2>怎么做的</h2>
+        <p>按应用分别设定领取日(每天/仅周末/仅工作日)以错开频率,添加多个每日时间点自动启动并完成 UI 自动化点击。核心只需标准库,装 comtypes 后解锁智能点击增强层。</p>
+        
+        
+        <h2 class="anchor-target">关键数字</h2>
+        <div class="metrics">
+          
+            <div class="metric">
+              <div class="metric-num">3</div>
+              <div class="metric-label">个客户端</div>
+              <div class="metric-note">ZCode/WorkBuddy/TraeWork</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">3</div>
+              <div class="metric-label">个默认时间点</div>
+              <div class="metric-note">08:00 / 12:00 / 20:00</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">2</div>
+              <div class="metric-label">秒自动保存</div>
+              <div class="metric-note">停手即存,不怕忘点</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">标准库</div>
+              <div class="metric-label">核心依赖</div>
+              <div class="metric-note">comtypes 可选</div>
+            </div>
+        </div>
+        <h2 class="anchor-target">功能</h2>
+        <ul>
+          <li><strong>三客户端覆盖</strong> —— ZCode、WorkBuddy、TraeWork CN,可改成任何其他 EXE。</li><li><strong>领取日错峰</strong> —— 每个应用单独设定:每天 / 仅周末 / 仅工作日。</li><li><strong>多时间点计划</strong> —— 默认 08:00、12:00、20:00,界面改动停手 2 秒即自动保存。</li><li><strong>智能点击增强</strong> —— 装 comtypes 后解锁 UIAutomation 点击,不依赖坐标。</li><li><strong>滑块验证码</strong> —— 内置滑块识别,直接从 15-几何验证码 嵌入调用。</li><li><strong>不静默失败</strong> —— 启动阶段任何崩溃都写进 logs 并弹框告知,不留无痕迹。</li>
+        </ul>
+        
+        
+        
+        <h2>工程细节</h2>
+        <div class="callout">Trae CN 是编码 IDE,没有每日积分入口,列表里默认不勾选。它和 TraeWork CN 是两个不同产品 —— 后者安装目录至今沿用旧名 TRAE SOLO CN。</div><div class="callout">启动脚本会先挑解释器:依次试 %LOCALAPPDATA%\Python\bin\pythonw.exe、pythonw、pyw,只有能 import tkinter 的才会被采用 —— 缺 tcl/tk 的 Python 在 import 阶段就死了,用户看到的正是「双击一下窗口一闪就没了」。一个都不可用时会停住并给出安装提示。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="pager">
+        <a href="dormgrid.html"><span class="dir">← 上一个</span><span class="name">11 宿舍超算 DormGrid</span></a>
+        <a class="next" href="audio-transcribe.html"><span class="dir">下一个 →</span><span class="name">13 音频转写工具</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <strong>个人项目工作室</strong><br>
+          13 个自用桌面工具与作品 · 内容为个人项目记录,非商业用途
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">首页</a>
+          <a href="../projects/index.html">全部项目</a>
+          <a href="../how-it-works.html">工作流</a>
+          <a href="../about.html">关于</a>
+        </div>
+      </div>
+    </footer>
+<script src="../projects.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>

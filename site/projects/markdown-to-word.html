@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>08 Markdown 转 Word — 个人项目工作室</title>
+<meta name="description" content="把 AI 回复的 Markdown 一键转成带格式富文本,粘到 Word 里标题、加粗、列表、表格全都在。">
+<meta property="og:title" content="08 Markdown 转 Word — 个人项目工作室">
+<meta property="og:description" content="把 AI 回复的 Markdown 一键转成带格式富文本,粘到 Word 里标题、加粗、列表、表格全都在。">
+
+<meta name="theme-color" content="#3d5afe">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html"><span class="nav-logo">工</span><span>个人项目工作室</span></a>
+    <button class="nav-burger" aria-label="打开菜单" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="../index.html">首页</a>
+      <a href="index.html" aria-current="page">全部项目</a>
+      <a href="../how-it-works.html">工作流</a>
+      <a href="../about.html">关于</a>
+      <span class="theme-toggle" role="group" aria-label="主题">
+        <button data-mode="light" aria-pressed="false">亮</button>
+        <button data-mode="dark" aria-pressed="false">暗</button>
+        <button data-mode="system" aria-pressed="false">跟随</button>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="project-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="../index.html">首页</a> / <a href="index.html">全部项目</a> / Markdown 转 Word</div>
+      <h1>08 · Markdown 转 Word</h1>
+      <p class="project-lede">把 AI 回复的 Markdown 一键转成带格式富文本,粘到 Word 里标题、加粗、列表、表格全都在。</p>
+      <div class="project-meta">
+        <div class="meta-item"><span class="meta-label">版本</span><span class="meta-value">v1.4.1</span></div>
+        <div class="meta-item"><span class="meta-label">状态</span><span class="meta-value">桌面版 + 网页版</span></div>
+        <div class="meta-item"><span class="meta-label">源码目录</span><span class="meta-value mono">08-Markdown转Word</span></div>
+        <div class="meta-item"><span class="meta-label">技术栈</span><span class="meta-value"><span class="tag">Electron</span> <span class="tag">原生解析器</span> <span class="tag">零第三方依赖</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="mock">
+    <div class="mock-bar"><span class="browser-frame-dot"></span><span class="browser-frame-dot"></span><span class="browser-frame-dot"></span><span class="t">Markdown → Word v1.4.1</span></div>
+    <div class="mock-body" style="flex-direction:column">
+      <div style="display:flex;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border);flex-wrap:wrap">
+        <span class="mock-btn">导出 .docx</span><span class="mock-btn ghost">.doc</span><span class="mock-btn ghost">.tex</span>
+      </div>
+      <div style="display:flex;flex:1">
+        <div class="mock-main" style="border-right:1px solid var(--border)">
+          <div class="mock-h">Markdown 输入</div>
+          <div class="mock-line" style="width:80%"></div>
+          <div class="mock-line" style="width:65%"></div>
+          <div class="mock-line" style="width:45%"></div>
+        </div>
+        <div class="mock-main">
+          <div class="mock-h">转换预览</div>
+          <div class="mock-line" style="width:70%;height:12px;background:var(--primary-light)"></div>
+          <div class="mock-line" style="width:85%"></div>
+          <div class="mock-line" style="width:55%"></div>
+        </div>
+      </div>
+    </div></div><div class="shot-note mock">
+           <strong>界面示意</strong>
+           <span>本项目为桌面应用,尚未留存实拍截图。此处按其真实界面结构与配色程序化绘制,布局与文案以 README 描述为准。</span>
+         </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <h2>它解决什么</h2>
+        <p>从 AI 拿到的 Markdown 答案,粘进 Word 就散成一堆纯文本行 —— 标题不分级、表格塌成一行、代码块和正文混在一起。</p>
+        <h2>怎么做的</h2>
+        <p>内置轻量 Markdown 解析器与 docx 生成器,离线解析无需联网。支持导出 .docx / .doc / .tex,公式渲染为 MathML 并可导出为 Word 原生可编辑公式,还能反向把 .docx 解析回 Markdown。</p>
+        
+        
+        <h2 class="anchor-target">关键数字</h2>
+        <div class="metrics">
+          
+            <div class="metric">
+              <div class="metric-num">9</div>
+              <div class="metric-label">级嵌套列表</div>
+              <div class="metric-note">按缩进还原</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">4</div>
+              <div class="metric-label">种导出格式</div>
+              <div class="metric-note">docx/doc/tex/富文本</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">0</div>
+              <div class="metric-label">第三方依赖</div>
+              <div class="metric-note">内置解析器与生成器</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">2</div>
+              <div class="metric-label">种形态</div>
+              <div class="metric-note">Electron + 单文件网页</div>
+            </div>
+        </div>
+        <h2 class="anchor-target">功能</h2>
+        <ul>
+          <li><strong>导出 .docx 原生格式</strong> —— 标准 OOXML,Word 直接可编辑,标题进入导航窗格。</li><li><strong>数学公式</strong> —— $..$ / $$..$$ 预览渲染为 MathML,导出为 Word 原生可编辑公式。</li><li><strong>反向导入</strong> —— 拖入 .docx 自动解析回 Markdown,含标题、列表、表格、超链接、OMML 公式。</li><li><strong>拖入互补推荐</strong> —— 拖入 .md 自动选 .tex,拖入 .tex 自动选 .docx,仍可手动改。</li><li><strong>多级列表</strong> —— 按缩进还原嵌套 ul/ol,最多支持 9 级。</li><li><strong>实时预览</strong> —— 左侧输入 Markdown,右侧即时显示转换效果。</li><li><strong>导出 LaTeX</strong> —— 中文默认 ctexart,可直接 xelatex 编译。</li>
+        </ul>
+        
+        
+        
+        <h2>工程细节</h2>
+        <div class="callout">网页版是单文件 HTML,双击即用,导出时浏览器直接下载。</div><div class="callout">MIT 许可,GitHub 公开发布。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="pager">
+        <a href="sjtu-link.html"><span class="dir">← 上一个</span><span class="name">07 交我导</span></a>
+        <a class="next" href="military-training-script.html"><span class="dir">下一个 →</span><span class="name">09 军训视频脚本</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <strong>个人项目工作室</strong><br>
+          13 个自用桌面工具与作品 · 内容为个人项目记录,非商业用途
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">首页</a>
+          <a href="../projects/index.html">全部项目</a>
+          <a href="../how-it-works.html">工作流</a>
+          <a href="../about.html">关于</a>
+        </div>
+      </div>
+    </footer>
+<script src="../projects.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>

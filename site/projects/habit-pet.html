@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>06 桌面宠物 · 鲸鱼娘 — 个人项目工作室</title>
+<meta name="description" content="一只养在桌面上的鲸鱼娘:饱食度由你的 git commit 喂养,久坐掉血,熬夜掉寿命上限。">
+<meta property="og:title" content="06 桌面宠物 · 鲸鱼娘 — 个人项目工作室">
+<meta property="og:description" content="一只养在桌面上的鲸鱼娘:饱食度由你的 git commit 喂养,久坐掉血,熬夜掉寿命上限。">
+<meta property="og:image" content="../screenshots/projects/06-pet.png">
+<meta name="theme-color" content="#3d5afe">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html"><span class="nav-logo">工</span><span>个人项目工作室</span></a>
+    <button class="nav-burger" aria-label="打开菜单" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="../index.html">首页</a>
+      <a href="index.html" aria-current="page">全部项目</a>
+      <a href="../how-it-works.html">工作流</a>
+      <a href="../about.html">关于</a>
+      <span class="theme-toggle" role="group" aria-label="主题">
+        <button data-mode="light" aria-pressed="false">亮</button>
+        <button data-mode="dark" aria-pressed="false">暗</button>
+        <button data-mode="system" aria-pressed="false">跟随</button>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="project-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="../index.html">首页</a> / <a href="index.html">全部项目</a> / 桌面宠物 · 鲸鱼娘</div>
+      <h1>06 · 桌面宠物 · 鲸鱼娘</h1>
+      <p class="project-lede">一只养在桌面上的鲸鱼娘:饱食度由你的 git commit 喂养,久坐掉血,熬夜掉寿命上限。</p>
+      <div class="project-meta">
+        <div class="meta-item"><span class="meta-label">版本</span><span class="meta-value">v0.8</span></div>
+        <div class="meta-item"><span class="meta-label">状态</span><span class="meta-value">版本最多</span></div>
+        <div class="meta-item"><span class="meta-label">源码目录</span><span class="meta-value mono">06-桌面宠物</span></div>
+        <div class="meta-item"><span class="meta-label">技术栈</span><span class="meta-value"><span class="tag">Python</span> <span class="tag">PyQt</span> <span class="tag">LLM</span> <span class="tag">GitHub API</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      
+    <div class="browser-frame">
+      <div class="browser-frame-bar">
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-url">桌面上常驻的鲸鱼娘,带状态面板与气泡</span>
+      </div>
+      <img src="../screenshots/projects/06-pet.png" alt="桌面上常驻的鲸鱼娘,带状态面板与气泡" loading="lazy">
+    </div>
+    <div class="shot-note real">
+      <strong>实拍截图</strong>
+      <span>桌面上常驻的鲸鱼娘,带状态面板与气泡</span>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <h2>它解决什么</h2>
+        <p>commit、久坐、熬夜这些事,做的时候完全没有痛感,一周后才从身体上找回来。硬性的番茄钟容易被无脑关掉。</p>
+        <h2>怎么做的</h2>
+        <p>把这三件事变成一只桌面上会说话的鲸鱼娘。LLM 负责针对你的行为说风凉话,而不是播报固定文案。v0.4 起形象从程序化绘制的橘猫升级为鲸鱼娘,v0.8 打通了 Qoder 与 WorkBuddy 的真实额度接口。</p>
+        
+        
+        <h2 class="anchor-target">关键数字</h2>
+        <div class="metrics">
+          
+            <div class="metric">
+              <div class="metric-num">+14</div>
+              <div class="metric-label">每 commit 饱食度</div>
+              <div class="metric-note">随时间衰减 4/小时</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">45</div>
+              <div class="metric-label">分钟久坐阈值</div>
+              <div class="metric-note">久坐 -8 / 起身 +5</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">6</div>
+              <div class="metric-label">家 AI 客户端额度</div>
+              <div class="metric-note">v0.5 起并入</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">不可逆</div>
+              <div class="metric-label">熬夜代价</div>
+              <div class="metric-note">寿命上限 -3/小时</div>
+            </div>
+        </div>
+        <h2 class="anchor-target">功能</h2>
+        <ul>
+          <li><strong>commit 喂养</strong> —— 每个新 commit +14 饱食度,随时间自然衰减 4/小时。0 也不会死,但会饿得说你。</li><li><strong>久坐掉血</strong> —— 连续伏案 45 分钟 -8,起身活动 10 分钟 +5,专注期间豁免。归零则出海散心 3 天。</li><li><strong>熬夜有代价</strong> —— 凌晨 0-6 点仍活跃每小时 -3 寿命上限,不可逆。</li><li><strong>远程投喂</strong> —— 连 GitHub 后,别的机器上的推送也会顺着洋流喂到她嘴里。</li><li><strong>真实额度接口</strong> —— Qoder 直读官方配额端点,WorkBuddy 走服务端实时额度,两家都保留本地降级。</li><li><strong>Q 弹手感</strong> —— 按压有回弹与音效,rua 动图,拖拽吸附镜像。</li>
+        </ul>
+        <div class="shot-grid"><figure>
+    <div class="browser-frame">
+      <div class="browser-frame-bar">
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-url">连上 GitHub 后的远程投喂与云端成就</span>
+      </div>
+      <img src="../screenshots/projects/06-pet-github.png" alt="连上 GitHub 后的远程投喂与云端成就" loading="lazy">
+    </div>
+    <div class="shot-note real">
+      <strong>实拍截图</strong>
+      <span>连上 GitHub 后的远程投喂与云端成就</span>
+    </div></figure></div>
+        <div class="shot-grid"><figure>
+    <div class="browser-frame">
+      <div class="browser-frame-bar">
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-url">rua 互动动图</span>
+      </div>
+      <img src="../screenshots/projects/06-pet-rua.gif" alt="rua 互动动图" loading="lazy">
+    </div>
+    <div class="shot-note real">
+      <strong>实拍截图</strong>
+      <span>rua 互动动图</span>
+    </div></figure></div>
+        
+        <h2>工程细节</h2>
+        <div class="callout">v0.7 是体验优化轮:气泡升级为独立圆角卡片(智能避让 + 点击穿透)、右键菜单收纳设置子菜单、渲染提速(增量平移)。</div><div class="callout">修掉一批云端投喂可靠性问题:断网重试、补喂可分次、离家期间不消费事件。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="pager">
+        <a href="bili-forgotten-curve.html"><span class="dir">← 上一个</span><span class="name">05 收藏夹遗忘曲线</span></a>
+        <a class="next" href="sjtu-link.html"><span class="dir">下一个 →</span><span class="name">07 交我导</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <strong>个人项目工作室</strong><br>
+          13 个自用桌面工具与作品 · 内容为个人项目记录,非商业用途
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">首页</a>
+          <a href="../projects/index.html">全部项目</a>
+          <a href="../how-it-works.html">工作流</a>
+          <a href="../about.html">关于</a>
+        </div>
+      </div>
+    </footer>
+<script src="../projects.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>

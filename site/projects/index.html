@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>全部 13 个项目 — 个人项目工作室</title>
+<meta name="description" content="13 个自用桌面工具与作品的完整清单:桌面工作台、抽签点名、验证码识别、遗忘曲线、桌面宠物、交我导、Markdown转Word、宿舍超算、音频转写、更新检查、几何验证码。">
+<meta property="og:title" content="全部 13 个项目 — 个人项目工作室">
+<meta property="og:description" content="13 个自用桌面工具的完整清单与详情入口。">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+<div id="nav"></div>
+
+<main id="main">
+  <section class="project-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="../index.html">首页</a> / 全部项目</div>
+      <h1>全部 13 个项目</h1>
+      <p class="project-lede">
+        按目录编号排列。每个项目点进去有独立详情页,写清了解决什么问题、怎么做的、踩过哪些坑。
+      </p>
+      <div class="project-meta">
+        <div class="meta-item"><span class="meta-label">项目总数</span><span class="meta-value">14</span></div>
+        <div class="meta-item"><span class="meta-label">有实拍截图</span><span class="meta-value">4 个</span></div>
+        <div class="meta-item"><span class="meta-label">主要形态</span><span class="meta-value">Windows 桌面应用</span></div>
+        <div class="meta-item"><span class="meta-label">数据原则</span><span class="meta-value">本地优先</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>按编号浏览</h2>
+        <p>绿色标记是有实拍截图的项目,截图卡会显示首张界面。</p>
+      </div>
+      <div class="grid grid-3" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>技术栈分布</h2>
+        <p>这批项目的共同点:能少装一个依赖就少装,能不联网就不联网。</p>
+      </div>
+      <div class="card-tags" id="stack"></div>
+
+      <h3 class="mt-4">形态与依赖</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>项目</th><th>形态</th><th>第三方依赖</th><th>数据位置</th></tr>
+          </thead>
+          <tbody id="dep-table"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="../projects.js"></script>
+<script src="../app.js"></script>
+<script>
+document.getElementById("nav").innerHTML = renderNav("projects/index.html");
+document.getElementById("footer").innerHTML = renderFooter(1);
+
+document.getElementById("grid").innerHTML =
+  PROJECTS.map((p, i) => {
+    const c = projectCard(p, { base: "", imgBase: "../" });
+    return c.replace('class="card reveal"', `class="card reveal reveal-d${Math.min(i % 5, 4)}"`);
+  }).join("");
+
+/* 技术栈标签,按出现次数排序 */
+const counts = {};
+PROJECTS.forEach(p => p.stack.forEach(s => counts[s] = (counts[s] || 0) + 1));
+document.getElementById("stack").innerHTML = Object.entries(counts)
+  .sort((a, b) => b[1] - a[1])
+  .map(([s, n]) => `<span class="tag tag-primary">${s} · ${n}</span>`).join("");
+
+/* 形态与依赖表 —— 逐项依据各项目 README 的自述,无推测 */
+const DEPS = {
+  "01": ["Electron 桌面应用", "tesseract.js(仅剪贴板 OCR)", "本机 %APPDATA%"],
+  "02": ["Python 桌面应用", "见 requirements.txt", "本机"],
+  "03": ["Python / tkinter,可打包单文件", "零第三方依赖", "名单与记录为本地 txt"],
+  "04": ["油猴脚本 + MV3 扩展", "零(模型与 wasm 全本地)", "全本地,零上报"],
+  "05": ["本地 WebUI + 独立 exe", "LLM API(用户自带 Key)", "本机 SQLite"],
+  "06": ["Python 桌面应用", "见 requirements.txt", "本机"],
+  "07": ["单文件 exe / Edge 模式 / Python", "pywebview(Python 模式)", "本机,启动同步网页版"],
+  "08": ["Electron 桌面应用 + 单文件网页", "零第三方依赖,内置解析器", "本地处理,不留存"],
+  "09": ["HTML + 生成脚本", "Pillow 等(仅素材生成)", "本地文件"],
+  "11": ["CLI + Web 仪表盘 + Electron", "核心零依赖(仅需 Node ≥18)", "无状态,任务即用即弃"],
+  "12": ["Python / tkinter 桌面应用", "核心仅标准库;comtypes 可选", "本机配置与日志"],
+  "13": ["PySide6 桌面应用", "faster-whisper + PySide6 + python-docx", "本机,音频不出本机"],
+  "14": ["Python 桌面应用", "标准库", "只读,不写任何数据"],
+  "15": ["Python 库(可被嵌入)", "OpenCV + ONNX Runtime", "本地,不联网"]
+};
+document.getElementById("dep-table").innerHTML = PROJECTS.map(p => {
+  const d = DEPS[p.id] || ["—", "—", "—"];
+  return `<tr>
+    <td><a href="${p.slug}.html"><strong>${p.id}</strong> ${p.name}</a></td>
+    <td>${d[0]}</td>
+    <td class="sec">${d[1]}</td>
+    <td class="sec">${d[2]}</td>
+  </tr>`;
+}).join("");
+</script>
+</body>
+</html>

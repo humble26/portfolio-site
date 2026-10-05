@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>11 宿舍超算 DormGrid — 个人项目工作室</title>
+<meta name="description" content="宿舍和实验室里闲着的电脑,用一条命令组成一台临时超算 —— 协调器切任务,节点自动领活。">
+<meta property="og:title" content="11 宿舍超算 DormGrid — 个人项目工作室">
+<meta property="og:description" content="宿舍和实验室里闲着的电脑,用一条命令组成一台临时超算 —— 协调器切任务,节点自动领活。">
+<meta property="og:image" content="../screenshots/projects/11-dashboard.png">
+<meta name="theme-color" content="#3d5afe">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html"><span class="nav-logo">工</span><span>个人项目工作室</span></a>
+    <button class="nav-burger" aria-label="打开菜单" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="../index.html">首页</a>
+      <a href="index.html" aria-current="page">全部项目</a>
+      <a href="../how-it-works.html">工作流</a>
+      <a href="../about.html">关于</a>
+      <span class="theme-toggle" role="group" aria-label="主题">
+        <button data-mode="light" aria-pressed="false">亮</button>
+        <button data-mode="dark" aria-pressed="false">暗</button>
+        <button data-mode="system" aria-pressed="false">跟随</button>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="project-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="../index.html">首页</a> / <a href="index.html">全部项目</a> / 宿舍超算 DormGrid</div>
+      <h1>11 · 宿舍超算 DormGrid</h1>
+      <p class="project-lede">宿舍和实验室里闲着的电脑,用一条命令组成一台临时超算 —— 协调器切任务,节点自动领活。</p>
+      <div class="project-meta">
+        <div class="meta-item"><span class="meta-label">版本</span><span class="meta-value">v0.2.0</span></div>
+        <div class="meta-item"><span class="meta-label">状态</span><span class="meta-value">全链路已验证</span></div>
+        <div class="meta-item"><span class="meta-label">源码目录</span><span class="meta-value mono">11-宿舍超算</span></div>
+        <div class="meta-item"><span class="meta-label">技术栈</span><span class="meta-value"><span class="tag">Node.js ≥18</span> <span class="tag">Electron</span> <span class="tag">Web 仪表盘</span> <span class="tag">UDP 自动发现</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      
+    <div class="browser-frame">
+      <div class="browser-frame-bar">
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-url">Web 仪表盘 —— 瓦片分工可视化,32/32 已完成</span>
+      </div>
+      <img src="../screenshots/projects/11-dashboard.png" alt="Web 仪表盘 —— 瓦片分工可视化,32/32 已完成" loading="lazy">
+    </div>
+    <div class="shot-note real">
+      <strong>实拍截图</strong>
+      <span>Web 仪表盘 —— 瓦片分工可视化,32/32 已完成</span>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <h2>它解决什么</h2>
+        <p>实验室那几台跑不动的机器,闲着就是闲着。想用它们算点东西,却要挨个装环境、手动分任务、手工收结果。</p>
+        <h2>怎么做的</h2>
+        <p>只要机器上有 Node,把文件夹拷过去就能入网。协调器切分任务分发给工作节点,节点自动领活交卷,结果自动汇总。三种形态:CLI、Web 仪表盘、Electron 桌面端。</p>
+        
+        
+        <h2 class="anchor-target">关键数字</h2>
+        <div class="metrics">
+          
+            <div class="metric">
+              <div class="metric-num">32/32</div>
+              <div class="metric-label">瓦片渲染完成</div>
+              <div class="metric-note">来自 e2e 实测结果</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">2</div>
+              <div class="metric-label">个在线节点</div>
+              <div class="metric-note">e2e 场景</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">3</div>
+              <div class="metric-label">种形态</div>
+              <div class="metric-note">CLI/仪表盘/桌面端</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">1</div>
+              <div class="metric-label">个文件即可入网</div>
+              <div class="metric-note">免装 Node 的 exe</div>
+            </div>
+        </div>
+        <h2 class="anchor-target">功能</h2>
+        <ul>
+          <li><strong>一条命令入网</strong> —— 只要 Node ≥18,拷文件夹过去就能加入网格,零依赖。</li><li><strong>UDP 广播自动发现</strong> —— 留空地址即自动发现同网段节点,不用手填 IP。</li><li><strong>免装 Node 单文件 exe</strong> —— 工作节点可打包成单文件 exe,拷一个文件就能加入。</li><li><strong>Blender 农场</strong> —— 桌面端里选 .blend + 填帧范围即可提交,无需命令行。</li><li><strong>日志分级降噪</strong> —— 普通事件弱化、里程碑高亮、错误红显,可一键只看重要。</li><li><strong>内核侧降噪</strong> —— 逐瓦片日志合并为四分位进度,秒级小任务不刷屏。</li><li><strong>无人值守验证</strong> —— npm run e2e 自动起协调器+2 节点全新渲染,截图并写结果后退出。</li>
+        </ul>
+        <div class="shot-grid"><figure>
+    <div class="browser-frame">
+      <div class="browser-frame-bar">
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-url">Electron 桌面端 —— 协调器与节点角色管理</span>
+      </div>
+      <img src="../screenshots/projects/11-control.png" alt="Electron 桌面端 —— 协调器与节点角色管理" loading="lazy">
+    </div>
+    <div class="shot-note real">
+      <strong>实拍截图</strong>
+      <span>Electron 桌面端 —— 协调器与节点角色管理</span>
+    </div></figure><figure>
+    <div class="browser-frame">
+      <div class="browser-frame-bar">
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-dot"></span>
+        <span class="browser-frame-url">Mandelbrot 分布式渲染成品 —— 两台节点协同出的图</span>
+      </div>
+      <img src="../screenshots/projects/11-mandelbrot.png" alt="Mandelbrot 分布式渲染成品 —— 两台节点协同出的图" loading="lazy">
+    </div>
+    <div class="shot-note real">
+      <strong>实拍截图</strong>
+      <span>Mandelbrot 分布式渲染成品 —— 两台节点协同出的图</span>
+    </div></figure></div>
+        
+        
+        <h2>工程细节</h2>
+        <div class="callout">e2e 是无人值守的:自动起协调器 + 2 节点做全新渲染,截图并写 e2e-result.json 后退出。</div><div class="callout">首个负载是 Mandelbrot 分布式渲染,用于验证全链路 —— 32 块瓦片由 2 个节点各完成 16 块。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="pager">
+        <a href="military-training-script.html"><span class="dir">← 上一个</span><span class="name">09 军训视频脚本</span></a>
+        <a class="next" href="token-claimer.html"><span class="dir">下一个 →</span><span class="name">12 Token 领取助手</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <strong>个人项目工作室</strong><br>
+          13 个自用桌面工具与作品 · 内容为个人项目记录,非商业用途
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">首页</a>
+          <a href="../projects/index.html">全部项目</a>
+          <a href="../how-it-works.html">工作流</a>
+          <a href="../about.html">关于</a>
+        </div>
+      </div>
+    </footer>
+<script src="../projects.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>
